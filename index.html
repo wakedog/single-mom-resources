@@ -1,0 +1,3118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Mother Resource Guide — Chico, CA & Alliance, OH</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf6ee;
+    --warm-white: #fff9f4;
+    --deep-teal: #1a3c40;
+    --teal: #2a5f65;
+    --teal-light: #3d8a91;
+    --gold: #c8833a;
+    --gold-light: #e8a55a;
+    --rose: #c2574a;
+    --sage: #4e7c59;
+    --sage-light: #6aaa78;
+    --text: #1e2022;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2d9ce;
+    --ca-accent: #1a6b8a;
+    --oh-accent: #7a2d2d;
+    --shadow: 0 4px 24px rgba(26,60,64,0.10);
+    --shadow-sm: 0 2px 8px rgba(26,60,64,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--deep-teal);
+    color: white;
+    padding: 56px 40px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(200,131,58,.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(61,138,145,.25) 0%, transparent 50%);
+  }
+  .header-inner { position: relative; z-index: 1; max-width: 860px; margin: auto; }
+  .header-eyebrow {
+    font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--gold-light); font-weight: 600; margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    line-height: 1.2; margin-bottom: 14px;
+  }
+  .header p {
+    font-size: 1rem; color: rgba(255,255,255,.75); max-width: 620px; margin: 0 auto 20px;
+  }
+  .badge-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+    border-radius: 99px; padding: 5px 16px; font-size: .82rem; font-weight: 500;
+    color: white; letter-spacing: .04em;
+  }
+  .badge.ca { background: rgba(26,107,138,.4); border-color: rgba(26,107,138,.6); }
+  .badge.oh { background: rgba(122,45,45,.4); border-color: rgba(122,45,45,.6); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  .alert-bar {
+    background: linear-gradient(90deg, #7a2d2d 0%, #c2574a 100%);
+    color: white; padding: 14px 24px; text-align: center;
+    font-size: .9rem; font-weight: 500;
+  }
+  .alert-bar strong { font-weight: 700; }
+
+  /* ── TAB NAV ── */
+  .tab-nav {
+    background: var(--warm-white);
+    border-bottom: 2px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+  .tab-nav-inner {
+    max-width: 1080px; margin: auto; padding: 0 24px;
+    display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+  }
+  .tab-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 16px 22px; font-size: .85rem; font-weight: 500;
+    color: var(--text-light); white-space: nowrap; transition: all .2s;
+    border-bottom: 3px solid transparent; margin-bottom: -2px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .tab-btn:hover { color: var(--teal); }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 600; }
+
+  .tab-content { display: none; padding: 40px 0 60px; }
+  .tab-content.active { display: block; }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem; color: var(--deep-teal);
+    margin-bottom: 6px;
+  }
+  .section-sub { font-size: .92rem; color: var(--text-light); margin-bottom: 28px; }
+
+  /* ── LOCATION TOGGLE ── */
+  .location-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .loc-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 6px; font-size: .85rem; font-weight: 600;
+    letter-spacing: .04em;
+  }
+  .loc-tag.ca { background: #e8f4f8; color: var(--ca-accent); border: 1.5px solid #b3d4e0; }
+  .loc-tag.oh { background: #fdf0f0; color: var(--oh-accent); border: 1.5px solid #e8c0c0; }
+
+  /* ── CARDS ── */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; margin-bottom: 40px;
+  }
+  .card {
+    background: white; border-radius: 12px; padding: 24px;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+    transition: transform .2s, box-shadow .2s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .card-accent { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  .card-accent.teal { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+  .card-accent.gold { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .card-accent.rose { background: linear-gradient(90deg, var(--rose), #e87060); }
+  .card-accent.sage { background: linear-gradient(90deg, var(--sage), var(--sage-light)); }
+  .card-accent.ca { background: linear-gradient(90deg, var(--ca-accent), #2a9abc); }
+  .card-accent.oh { background: linear-gradient(90deg, var(--oh-accent), #c2574a); }
+
+  .card-label {
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 8px;
+  }
+  .card-label.teal { color: var(--teal); }
+  .card-label.gold { color: var(--gold); }
+  .card-label.rose { color: var(--rose); }
+  .card-label.sage { color: var(--sage); }
+  .card-label.ca { color: var(--ca-accent); }
+  .card-label.oh { color: var(--oh-accent); }
+
+  .card h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 8px; color: var(--deep-teal); }
+  .card p { font-size: .88rem; color: var(--text-mid); margin-bottom: 12px; }
+
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .contact-list li {
+    font-size: .83rem; display: flex; align-items: flex-start; gap: 8px;
+    color: var(--text-mid);
+  }
+  .contact-list .ico { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .contact-list a { color: var(--teal); text-decoration: none; font-weight: 500; }
+  .contact-list a:hover { text-decoration: underline; }
+
+  /* ── CHECKLIST ── */
+  .checklist-section { margin-bottom: 40px; }
+  .checklist-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+  }
+  .step-number {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+    font-weight: 700; flex-shrink: 0; color: white;
+  }
+  .step-number.urgent { background: var(--rose); }
+  .step-number.soon { background: var(--gold); }
+  .step-number.medium { background: var(--teal); }
+  .step-number.long { background: var(--sage); }
+
+  .step-meta h3 { font-size: 1rem; font-weight: 600; color: var(--deep-teal); margin-bottom: 2px; }
+  .timeframe {
+    font-size: .78rem; padding: 2px 10px; border-radius: 99px; display: inline-block;
+    font-weight: 600; letter-spacing: .05em;
+  }
+  .timeframe.urgent { background: #fde8e6; color: var(--rose); }
+  .timeframe.soon { background: #fdf2e4; color: var(--gold); }
+  .timeframe.medium { background: #e6f2f4; color: var(--teal); }
+  .timeframe.long { background: #e8f2ea; color: var(--sage); }
+
+  .checklist-items { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 16px; border-radius: 8px;
+    transition: background .15s; cursor: pointer;
+  }
+  .checklist-item:hover { background: rgba(42,95,101,.05); }
+  .checklist-item input[type="checkbox"] {
+    margin-top: 3px; flex-shrink: 0;
+    width: 18px; height: 18px; cursor: pointer; accent-color: var(--teal);
+  }
+  .checklist-item label {
+    font-size: .9rem; color: var(--text-mid); cursor: pointer; flex: 1;
+  }
+  .checklist-item.checked label { text-decoration: line-through; color: var(--text-light); }
+  .checklist-item .item-note {
+    font-size: .78rem; color: var(--text-light);
+    display: block; margin-top: 3px;
+  }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  /* ── WAIT TIME TABLE ── */
+  .wait-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+  .wait-table th {
+    background: var(--deep-teal); color: white;
+    padding: 12px 16px; text-align: left; font-size: .82rem;
+    font-weight: 600; letter-spacing: .05em;
+  }
+  .wait-table th:first-child { border-radius: 8px 0 0 0; }
+  .wait-table th:last-child { border-radius: 0 8px 0 0; }
+  .wait-table td { padding: 12px 16px; font-size: .88rem; border-bottom: 1px solid var(--border); }
+  .wait-table tr:last-child td { border-bottom: none; }
+  .wait-table tr:nth-child(even) td { background: rgba(42,95,101,.04); }
+  .wait-table .fast { color: var(--sage); font-weight: 600; }
+  .wait-table .medium { color: var(--gold); font-weight: 600; }
+  .wait-table .slow { color: var(--rose); font-weight: 600; }
+
+  /* ── TIPS BOX ── */
+  .tip-box {
+    background: linear-gradient(135deg, #f0f8fa 0%, #fdf6ee 100%);
+    border: 1.5px solid #b3d4d8; border-radius: 12px;
+    padding: 24px 28px; margin-bottom: 28px;
+  }
+  .tip-box h4 { color: var(--teal); font-size: 1rem; margin-bottom: 12px; font-weight: 600; }
+  .tip-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .tip-box li { font-size: .88rem; color: var(--text-mid); padding-left: 20px; position: relative; }
+  .tip-box li::before { content: '→'; position: absolute; left: 0; color: var(--teal-light); font-weight: 700; }
+
+  .warn-box {
+    background: #fff8f0; border: 1.5px solid #e8c090; border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 28px;
+  }
+  .warn-box h4 { color: var(--gold); font-size: .95rem; margin-bottom: 10px; font-weight: 600; }
+  .warn-box p { font-size: .87rem; color: var(--text-mid); }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--deep-teal); color: rgba(255,255,255,.65);
+    text-align: center; padding: 32px 24px; font-size: .82rem;
+  }
+  .footer strong { color: white; }
+
+  /* ── EMERGENCY BAR ── */
+  .emergency-panel {
+    background: var(--rose); color: white;
+    border-radius: 12px; padding: 22px 28px; margin-bottom: 32px;
+  }
+  .emergency-panel h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; margin-bottom: 10px; }
+  .emergency-panel .em-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .emergency-panel .em-item { background: rgba(255,255,255,.15); border-radius: 8px; padding: 10px 14px; font-size: .85rem; }
+  .emergency-panel .em-item strong { display: block; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; opacity: .8; }
+
+  @media (max-width: 640px) {
+    .header { padding: 36px 20px 32px; }
+    .tab-btn { padding: 14px 14px; font-size: .8rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .action-bar { bottom: 12px; right: 10px; }
+    .action-btn { width: 40px; height: 40px; font-size: 1rem; }
+    .alert-bar { font-size: .82rem; padding: 12px 16px; line-height: 1.5; }
+    .wallet-grid { grid-template-columns: 1fr; }
+    .progress-summary { padding: 12px 16px; }
+    .em-grid { grid-template-columns: 1fr !important; }
+  }
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── UTILITY: Click to copy ── */
+  .copy-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: .72rem; color: var(--text-light);
+    padding: 2px 6px; margin-left: 4px; border-radius: 4px;
+    transition: all .15s; font-family: inherit;
+    vertical-align: middle;
+  }
+  .copy-btn:hover { background: rgba(42,95,101,.1); color: var(--teal); }
+  .copy-btn.copied { background: var(--sage); color: white; }
+  .copy-btn::before { content: '⧉'; }
+  .copy-btn.copied::before { content: '✓ Copied'; font-size: .68rem; }
+
+  .map-link {
+    display: inline-block; margin-left: 6px;
+    color: var(--ca-accent); text-decoration: none;
+    font-size: .72rem; font-weight: 500; vertical-align: middle;
+    padding: 1px 7px; border: 1px solid #b3d4e0; border-radius: 4px;
+    transition: all .15s;
+  }
+  .map-link:hover { background: var(--ca-accent); color: white; }
+  .map-link::before { content: '📍 Map'; }
+
+  /* ── SEARCH BAR ── */
+  .search-wrap {
+    position: relative; max-width: 1080px; margin: 0 auto;
+    padding: 16px 24px 4px;
+  }
+  .search-input {
+    width: 100%; padding: 11px 16px 11px 40px;
+    border: 1.5px solid var(--border); border-radius: 10px;
+    background: white; font-size: .9rem; font-family: inherit;
+    color: var(--text); transition: border-color .15s;
+  }
+  .search-input:focus { outline: none; border-color: var(--teal); }
+  .search-icon {
+    position: absolute; left: 38px; top: 50%; transform: translateY(-25%);
+    color: var(--text-light); font-size: 1rem; pointer-events: none;
+  }
+  .search-clear {
+    position: absolute; right: 36px; top: 50%; transform: translateY(-25%);
+    background: none; border: none; cursor: pointer; color: var(--text-light);
+    font-size: 1.1rem; padding: 4px 8px; display: none;
+  }
+  .search-clear.visible { display: block; }
+  .search-meta {
+    font-size: .78rem; color: var(--text-light); padding: 6px 12px 0;
+  }
+  .search-hit { background: rgba(232,165,90,.25); border-radius: 3px; padding: 1px 2px; }
+  .card.search-hidden, .checklist-item.search-hidden { display: none; }
+  .card.search-match { box-shadow: 0 0 0 2px var(--gold-light), var(--shadow); }
+
+  /* ── ACTION BAR (top right floating) ── */
+  .action-bar {
+    position: fixed; bottom: 18px; right: 18px; z-index: 200;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .action-btn {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: white; border: 1.5px solid var(--border);
+    box-shadow: var(--shadow); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; transition: all .15s; color: var(--text-mid);
+  }
+  .action-btn:hover {
+    background: var(--teal); color: white; border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .action-btn[aria-pressed="true"] {
+    background: var(--gold); color: white; border-color: var(--gold);
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120%);
+    background: var(--deep-teal); color: white;
+    padding: 10px 20px; border-radius: 8px; font-size: .88rem;
+    box-shadow: var(--shadow); z-index: 1000; pointer-events: none;
+    transition: transform .25s ease-out; max-width: 90vw;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── PROGRESS BAR (checklist tab) ── */
+  .progress-summary {
+    background: white; border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+  }
+  .progress-text { font-size: .9rem; color: var(--text-mid); flex: 1; min-width: 200px; }
+  .progress-text strong { color: var(--deep-teal); font-size: 1rem; }
+  .progress-bar-wrap {
+    flex: 2; min-width: 200px; height: 10px;
+    background: var(--cream); border-radius: 99px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; background: linear-gradient(90deg, var(--sage) 0%, var(--sage-light) 100%);
+    border-radius: 99px; transition: width .35s ease-out; width: 0%;
+  }
+  .progress-reset {
+    background: none; border: 1px solid var(--border);
+    color: var(--text-light); padding: 5px 12px;
+    border-radius: 6px; font-size: .75rem; cursor: pointer;
+    font-family: inherit; transition: all .15s;
+  }
+  .progress-reset:hover { color: var(--rose); border-color: var(--rose); }
+
+  /* ── DARK MODE ── */
+  body.dark {
+    --cream: #1a1d1f;
+    --warm-white: #232729;
+    --text: #e8e6e3;
+    --text-mid: #b8b5b1;
+    --text-light: #888581;
+    --border: #2f3437;
+    --deep-teal: #0f2528;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  body.dark .card { background: #232729; }
+  body.dark .progress-summary { background: #232729; }
+  body.dark .search-input { background: #232729; color: var(--text); }
+  body.dark .action-btn { background: #232729; }
+  body.dark .tab-nav { background: #232729; }
+  body.dark .wait-table tr:nth-child(even) td { background: rgba(255,255,255,.03); }
+  body.dark .loc-tag.ca { background: #1a3540; color: #8ec8e0; }
+  body.dark .loc-tag.oh { background: #3a1d1d; color: #e0a8a8; }
+  body.dark .tip-box { background: linear-gradient(135deg, #1a2528 0%, #232729 100%); border-color: #2f4a4f; }
+  body.dark .warn-box { background: #2a221a; border-color: #4a3520; }
+  body.dark .timeframe.urgent { background: #3a1a1a; }
+  body.dark .timeframe.soon { background: #3a2c1a; }
+  body.dark .timeframe.medium { background: #1a2a2c; }
+  body.dark .timeframe.long { background: #1a2c1f; }
+
+  /* ── FONT SIZE CONTROL ── */
+  body.text-lg { font-size: 1.08rem; }
+  body.text-xl { font-size: 1.18rem; }
+
+  /* ── FOCUS INDICATORS (a11y) ── */
+  *:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .checklist-item input:focus-visible {
+    outline-offset: 4px;
+  }
+  /* Don't double-outline cards on hover-focus */
+  .card:focus-visible { outline-offset: -2px; }
+
+  /* ── BENEFITS ESTIMATOR ── */
+  .estimator {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 16px;
+  }
+  .est-col {
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 22px;
+    box-shadow: var(--shadow-sm); position: relative;
+  }
+  .est-col.ca { border-top: 4px solid var(--ca-accent); }
+  .est-col.oh { border-top: 4px solid var(--oh-accent); }
+  body.dark .est-col { background: #232729; }
+  .est-col h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem; color: var(--deep-teal);
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  body.dark .est-col h3 { color: var(--text); }
+  .est-table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+  .est-table td { padding: 6px 0; color: var(--text-mid); border-bottom: 1px dotted var(--border); }
+  .est-table .est-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; white-space: nowrap; }
+  .est-table tr.est-subtotal td { padding-top: 10px; color: var(--teal); border-bottom: 1px solid var(--teal); }
+  .est-table tr.est-total td { padding-top: 12px; color: var(--sage); font-size: .95rem; border-top: 2px solid var(--sage); border-bottom: none; }
+  .est-disclaim { font-size: .75rem; color: var(--text-light); margin-top: 10px; font-style: italic; line-height: 1.4; }
+  .est-note {
+    font-size: .82rem; color: var(--text-mid); padding: 12px 16px;
+    background: #fff8f0; border-left: 3px solid var(--gold);
+    border-radius: 4px; margin-bottom: 32px;
+  }
+  body.dark .est-note { background: #2a221a; }
+  @media (max-width: 720px) { .estimator { grid-template-columns: 1fr; } }
+
+  /* ── VCARD DOWNLOAD BUTTONS ── */
+  .vcard-btn {
+    background: var(--teal); color: white; border: none;
+    padding: 12px 22px; border-radius: 99px;
+    font-family: 'DM Sans', sans-serif; font-size: .92rem;
+    font-weight: 600; cursor: pointer; box-shadow: var(--shadow-sm);
+    transition: transform .15s, box-shadow .15s, background .15s;
+  }
+  .vcard-btn:hover { background: var(--deep-teal); transform: translateY(-1px); box-shadow: var(--shadow); }
+  .vcard-btn.alt {
+    background: white; color: var(--teal); border: 1.5px solid var(--teal);
+    padding: 10px 18px; font-size: .85rem;
+  }
+  .vcard-btn.alt:hover { background: var(--cream); }
+  body.dark .vcard-btn.alt { background: #232729; color: var(--teal-light); }
+  @media print { .vcard-btn { display: none; } }
+
+  /* ── WALLET CARD (printable) ── */
+  .wallet-card {
+    max-width: 520px; margin: 0 auto 32px;
+    background: white; border: 2px dashed var(--teal);
+    border-radius: 14px; padding: 20px 24px;
+    position: relative; box-shadow: var(--shadow-sm);
+  }
+  body.dark .wallet-card { background: #232729; }
+  .wallet-card::before {
+    content: '✂ Print, fold in half, and keep in your wallet';
+    position: absolute; top: -11px; left: 18px; background: var(--cream);
+    padding: 0 10px; font-size: .72rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--teal-light); font-weight: 600;
+  }
+  body.dark .wallet-card::before { background: #1a1d1f; }
+  .wallet-title {
+    font-family: 'DM Serif Display', serif; font-size: 1.05rem;
+    color: var(--deep-teal); margin-bottom: 4px;
+  }
+  body.dark .wallet-title { color: var(--text); }
+  .wallet-sub { font-size: .76rem; color: var(--text-light); margin-bottom: 14px; }
+  .wallet-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px 14px; font-size: .82rem;
+  }
+  .wallet-row { display: flex; flex-direction: column; padding: 4px 0; border-bottom: 1px dotted var(--border); }
+  .wallet-row strong { font-size: .68rem; color: var(--text-light); letter-spacing: .04em; text-transform: uppercase; }
+  .wallet-row a { color: var(--teal); text-decoration: none; font-weight: 600; font-size: .92rem; }
+  .wallet-row a:hover { text-decoration: underline; }
+  .wallet-row.full { grid-column: 1 / -1; }
+  @media print {
+    .wallet-card {
+      page-break-inside: avoid; break-inside: avoid;
+      border-color: #000; box-shadow: none; max-width: 100%;
+    }
+    .wallet-card::before { background: white; color: #000; }
+  }
+
+  /* ── HELP MODAL ── */
+  .help-modal {
+    position: fixed; inset: 0; background: rgba(26,60,64,.5);
+    z-index: 500; display: flex; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+  }
+  .help-modal[hidden] { display: none; }
+  .help-card {
+    background: white; border-radius: 14px; padding: 28px 32px;
+    max-width: 480px; width: 100%; max-height: 88vh; overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3); position: relative;
+  }
+  body.dark .help-card { background: #232729; color: var(--text); }
+  .help-close {
+    position: absolute; top: 14px; right: 14px;
+    background: none; border: none; cursor: pointer;
+    font-size: 1.4rem; color: var(--text-light);
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .help-close:hover { background: var(--cream); color: var(--text); }
+  .help-card h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+    color: var(--deep-teal); margin-bottom: 14px;
+  }
+  body.dark .help-card h3 { color: var(--text); }
+  .help-card h4 { font-size: .92rem; color: var(--teal); margin: 18px 0 8px; }
+  .help-card dl {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 8px 16px; align-items: center; font-size: .9rem;
+    color: var(--text-mid); margin-bottom: 8px;
+  }
+  .help-card dt { text-align: right; }
+  .help-card kbd {
+    display: inline-block; background: var(--cream); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-family: 'DM Sans', sans-serif;
+    font-size: .82rem; box-shadow: 0 1px 0 var(--border); color: var(--text);
+  }
+  body.dark .help-card kbd { background: #1a1d1f; }
+  .help-card ul { list-style: none; padding: 0; }
+  .help-card li { font-size: .88rem; color: var(--text-mid); padding: 5px 0 5px 18px; position: relative; }
+  .help-card li::before { content: '•'; position: absolute; left: 4px; color: var(--gold); font-weight: 700; }
+
+  /* Skip link for keyboard users */
+  .skip-link {
+    position: absolute; top: -100px; left: 8px;
+    background: var(--deep-teal); color: white;
+    padding: 10px 16px; border-radius: 6px; z-index: 1000;
+    text-decoration: none; font-size: .9rem; font-weight: 600;
+    transition: top .15s;
+  }
+  .skip-link:focus { top: 8px; }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    .tab-nav, .action-bar, .alert-bar, .search-wrap, .progress-reset,
+    .copy-btn, .map-link, .toast { display: none !important; }
+    .tab-content { display: block !important; padding: 12px 0; page-break-inside: avoid; }
+    .tab-content::before {
+      content: attr(data-print-title);
+      display: block; font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem; color: #000; margin: 24px 0 12px;
+      border-bottom: 2px solid #000; padding-bottom: 6px;
+    }
+    body { background: white; color: black; font-size: 10pt; line-height: 1.4; }
+    .card { box-shadow: none; border: 1px solid #999; break-inside: avoid; }
+    .card-grid { display: block; }
+    .card { margin-bottom: 10px; }
+    .header { background: white !important; color: black !important; padding: 12px 0; }
+    .header::before { display: none; }
+    .header h1, .header p, .header-eyebrow { color: black !important; }
+    .badge { background: #eee !important; color: black !important; border: 1px solid #999 !important; }
+    .emergency-panel { background: #fde8e6 !important; color: #000 !important; border: 2px solid #c2574a; }
+    .emergency-panel * { color: #000 !important; }
+    .step-number { background: #555 !important; color: white !important; }
+    .timeframe { background: #eee !important; color: #000 !important; border: 1px solid #999; }
+    .wait-table th { background: #333 !important; color: white !important; }
+    a { color: #000 !important; text-decoration: none; }
+    a[href^="tel:"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+    .footer { background: white !important; color: #555 !important; border-top: 1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#tab-overview" class="skip-link">Skip to main content</a>
+<div class="alert-bar" role="alert">
+  <strong>⚠️ If you have NO food, shelter, or immediate danger:</strong> Call <a href="tel:211" style="color:white;text-decoration:underline;">211</a> (both states, 24/7) · In CA: <a href="tel:18003459491" style="color:white;text-decoration:underline;">(800) 345-9491</a> · In OH: dial 2-1-1 ·
+  <strong>Domestic Violence:</strong> <a href="tel:18007997233" style="color:white;text-decoration:underline;">1-800-799-7233</a>
+</div>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-eyebrow">Counselor's Resource Guide — Updated May 2026</div>
+    <h1>Single Mother Resource Guide<br>with Two Infants</h1>
+    <p>A complete, step-by-step guide to every program, benefit, shelter, and service available — with real contacts, real wait times, and real action plans.</p>
+    <div class="badge-row">
+      <span class="badge ca">📍 Chico, CA (Butte County)</span>
+      <span class="badge oh">📍 Alliance, OH (Stark County)</span>
+      <span class="badge">👶👶 Two Infants</span>
+      <span class="badge">✅ No Employment</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tab-nav" aria-label="Main sections">
+  <div class="tab-nav-inner" role="tablist">
+    <button class="tab-btn active" role="tab" aria-controls="tab-overview" aria-selected="true" onclick="showTab('overview', event)">🏠 Start Here</button>
+    <button class="tab-btn" role="tab" aria-controls="tab-chico" aria-selected="false" onclick="showTab('chico', event)">🌴 Chico, CA Guide</button>
+    <button class="tab-btn" role="tab" aria-controls="tab-alliance" aria-selected="false" onclick="showTab('alliance', event)">🏙️ Alliance, OH Guide</button>
+    <button class="tab-btn" role="tab" aria-controls="tab-checklist" aria-selected="false" onclick="showTab('checklist', event)">✅ Checklists</button>
+    <button class="tab-btn" role="tab" aria-controls="tab-waittimes" aria-selected="false" onclick="showTab('waittimes', event)">⏱️ Wait Times</button>
+    <button class="tab-btn" role="tab" aria-controls="tab-tips" aria-selected="false" onclick="showTab('tips', event)">💡 Counselor Tips</button>
+  </div>
+</nav>
+
+<div class="search-wrap">
+  <span class="search-icon">🔎</span>
+  <input id="globalSearch" class="search-input" type="search" placeholder="Search resources — try 'formula', 'shelter', 'WIC', 'phone', 'Medi-Cal'…" autocomplete="off" aria-label="Search resources">
+  <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+  <div class="search-meta" id="searchMeta"></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: START HERE / OVERVIEW
+════════════════════════════════════════════ -->
+<div id="tab-overview" class="tab-content active" data-print-title="Start Here — Overview">
+  <div class="container">
+
+    <div class="emergency-panel">
+      <h3>🚨 Emergency — Call These First If You Need Immediate Help Today</h3>
+      <div class="em-grid">
+        <div class="em-item"><strong>Chico, CA Shelter Line</strong>(530) 897-5890 — City of Chico 24/7</div>
+        <div class="em-item"><strong>Alliance, OH Homeless Hotline</strong>(330) 452-4363 — Stark County 24/7</div>
+        <div class="em-item"><strong>CA 2-1-1 Help Line</strong>(800) 345-9491 or dial 2-1-1</div>
+        <div class="em-item"><strong>OH 2-1-1 United Way</strong>Dial 2-1-1 (Stark County, 24/7)</div>
+        <div class="em-item"><strong>CA Food Emergency</strong>North State Food Bank: (530) 712-2600</div>
+        <div class="em-item"><strong>OH Salvation Army (Alliance)</strong>(330) 823-5188</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="vcard-btn" onclick="downloadVCards('ca')" type="button">📲 Save Chico, CA Contacts to Phone</button>
+      <button class="vcard-btn" onclick="downloadVCards('oh')" type="button">📲 Save Alliance, OH Contacts to Phone</button>
+    </div>
+
+    <div class="wallet-card" aria-label="Printable wallet reference card">
+      <div class="wallet-title">Pocket Reference — Most Important Numbers</div>
+      <div class="wallet-sub">Print this · cut on the dashed line · keep in your wallet, diaper bag, or by your phone</div>
+      <div class="wallet-grid">
+        <div class="wallet-row full"><strong>If unsafe / Domestic Violence (24/7)</strong><a href="tel:18007997233">1-800-799-7233 · text START to 88788</a></div>
+        <div class="wallet-row"><strong>211 — Anything Else (24/7)</strong><a href="tel:211">Dial 211</a></div>
+        <div class="wallet-row"><strong>Maternal Mental Health</strong><a href="tel:18338526262">1-833-852-6262</a></div>
+        <div class="wallet-row" style="background:#fdf0f0;padding:6px 8px;border-radius:4px;"><strong>📍 Chico — Butte Co DESS</strong><a href="tel:18774108803">1-877-410-8803</a></div>
+        <div class="wallet-row" style="background:#fdf0f0;padding:6px 8px;border-radius:4px;"><strong>📍 Chico — Shelter Line</strong><a href="tel:5308975890">(530) 897-5890</a></div>
+        <div class="wallet-row" style="background:#fdf0f0;padding:6px 8px;border-radius:4px;"><strong>📍 Chico — WIC</strong><a href="tel:5305524025">(530) 552-4025</a></div>
+        <div class="wallet-row" style="background:#fdf0f0;padding:6px 8px;border-radius:4px;"><strong>📍 Chico — Catalyst DV</strong><a href="tel:18008958476">(800) 895-8476</a></div>
+        <div class="wallet-row" style="background:#e8f4f8;padding:6px 8px;border-radius:4px;"><strong>📍 Alliance — Stark Co JFS</strong><a href="tel:3304524661">(330) 452-4661</a></div>
+        <div class="wallet-row" style="background:#e8f4f8;padding:6px 8px;border-radius:4px;"><strong>📍 Alliance — Homeless Hotline</strong><a href="tel:3304524363">(330) 452-4363</a></div>
+        <div class="wallet-row" style="background:#e8f4f8;padding:6px 8px;border-radius:4px;"><strong>📍 Alliance — WIC</strong><a href="tel:3308213929">(330) 821-3929</a></div>
+        <div class="wallet-row" style="background:#e8f4f8;padding:6px 8px;border-radius:4px;"><strong>📍 Alliance — DV Shelter</strong><a href="tel:3308237223">(330) 823-7223</a></div>
+      </div>
+    </div>
+
+    <h2 class="section-title">💵 Total Monthly Support — What Your Family May Qualify For</h2>
+    <p class="section-sub">When you stack every available program together, here is the honest estimate of monthly support for your family of 3 (you + 2 infants, no income). None of these benefits cancel each other out — apply for all.</p>
+    <div class="estimator">
+      <div class="est-col ca">
+        <h3>📍 Chico, CA · Butte County</h3>
+        <table class="est-table">
+          <tr><td>CalWORKs cash aid (Region 2)</td><td class="est-val">$983</td></tr>
+          <tr><td>CalFresh (SNAP) food</td><td class="est-val">$785</td></tr>
+          <tr><td>WIC (formula + food for 3)</td><td class="est-val">~$400</td></tr>
+          <tr><td>Medi-Cal coverage value</td><td class="est-val">~$300</td></tr>
+          <tr><td>LIHEAP (annualized)</td><td class="est-val">~$50</td></tr>
+          <tr><td>CA LifeLine phone</td><td class="est-val">~$30</td></tr>
+          <tr class="est-subtotal"><td><strong>Subtotal — without housing</strong></td><td class="est-val"><strong>~$2,548 / mo</strong></td></tr>
+          <tr><td>+ Section 8 voucher (when received)</td><td class="est-val">~$1,200</td></tr>
+          <tr class="est-total"><td><strong>Total with housing voucher</strong></td><td class="est-val"><strong>~$3,748 / mo</strong></td></tr>
+        </table>
+        <p class="est-disclaim">+ EITC and Child Tax Credit at tax time: typically $4,000–$7,000 lump sum (1× per year).</p>
+      </div>
+      <div class="est-col oh">
+        <h3>📍 Alliance, OH · Stark County</h3>
+        <table class="est-table">
+          <tr><td>Ohio Works First cash</td><td class="est-val">~$500</td></tr>
+          <tr><td>SNAP food assistance</td><td class="est-val">$785</td></tr>
+          <tr><td>WIC (formula + food for 3)</td><td class="est-val">~$400</td></tr>
+          <tr><td>Ohio Medicaid coverage value</td><td class="est-val">~$300</td></tr>
+          <tr><td>HEAP (annualized)</td><td class="est-val">~$50</td></tr>
+          <tr><td>Federal Lifeline phone</td><td class="est-val">~$30</td></tr>
+          <tr class="est-subtotal"><td><strong>Subtotal — without housing</strong></td><td class="est-val"><strong>~$2,065 / mo</strong></td></tr>
+          <tr><td>+ Section 8 voucher (when received)</td><td class="est-val">~$900</td></tr>
+          <tr class="est-total"><td><strong>Total with housing voucher</strong></td><td class="est-val"><strong>~$2,965 / mo</strong></td></tr>
+        </table>
+        <p class="est-disclaim">+ EITC and Child Tax Credit at tax time: typically $4,000–$7,000 lump sum (1× per year).</p>
+      </div>
+    </div>
+    <p class="est-note"><strong>⚠️ These are maximum estimates</strong> assuming full eligibility. Your exact benefit may be lower depending on your situation. <strong>None of these programs cancel each other out</strong> — apply for all of them in one trip. WIC value is the retail equivalent of the food/formula provided; insurance value reflects what coverage would cost out of pocket.</p>
+
+    <h2 class="section-title">Your Situation & What's Available</h2>
+    <p class="section-sub">You are a single mother with no income and two infants. Here is the honest picture — you qualify for significant help.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Cash Assistance</div>
+        <h3>Monthly Cash Aid</h3>
+        <p>In California (CalWORKs): a family of 3 (you + 2 infants) with zero income can receive up to <strong>$983/month</strong> in Region 2 (Butte County) as of Oct 2025.<br><br>In Ohio (Ohio Works First): cash benefits for a family of 3, typically <strong>$400–$500/month</strong>. Ohio's TANF is more restrictive but still available immediately.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food Assistance</div>
+        <h3>CalFresh / SNAP + WIC</h3>
+        <p>A household of 3 with zero income qualifies for <strong>$785/month</strong> in SNAP/CalFresh food benefits (federal rate FY2025–26).<br><br>WIC provides additional food specifically for infants and mothers: infant formula, cereals, milk, eggs, produce. Both states have WIC offices with same-week appointments.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Healthcare</div>
+        <h3>Medi-Cal / Medicaid — Free</h3>
+        <p>You and both infants qualify for <strong>free full health coverage</strong> immediately. In CA, CalWORKs automatically enrolls you in Medi-Cal. In OH, Ohio Medicaid covers the whole family. Includes doctor visits, prescriptions, dental, vision, mental health. Infants are a priority — same-day approval often possible.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Housing</div>
+        <h3>Rental Assistance + Shelter</h3>
+        <p>Both areas have emergency family shelters and rental assistance. CA has Housing Authority of Butte County with Section 8 vouchers. OH has Stark Metropolitan Housing Authority. <strong>Warning:</strong> Section 8 waitlists are long (1–3 years) — apply immediately even while pursuing other options.</p>
+      </div>
+    </div>
+
+    <div class="tip-box" style="border-color:#b3d4d8;background:linear-gradient(135deg,#fdf6ee 0%, #f0f8fa 100%);">
+      <h4 style="color:var(--teal);">🌐 ¿Habla Español? — Spanish-Language Help Lines</h4>
+      <ul>
+        <li><strong>211</strong> — both states offer Spanish service automatically; press 2 or ask for "Español"</li>
+        <li><strong>Medi-Cal / Covered CA (Spanish):</strong> <a href="tel:18003001506">(800) 300-1506</a></li>
+        <li><strong>CalFresh statewide (Spanish):</strong> <a href="tel:18778473663">(877) 847-3663</a> press 2</li>
+        <li><strong>Ohio Benefits (Spanish):</strong> <a href="tel:18446406446">1-844-640-6446</a> press 2</li>
+        <li><strong>National Domestic Violence Hotline (Spanish):</strong> <a href="tel:18007997233">1-800-799-7233</a> — bilingual advocates 24/7</li>
+        <li><strong>Maternal Mental Health (Spanish + 60 lenguajes):</strong> <a href="tel:18338526262">1-833-852-6262</a></li>
+        <li><strong>PSI Postpartum (Español):</strong> <a href="tel:9719201160">(971) 420-0294</a> — línea en español</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Your Counselor Says — The #1 Most Important Thing to Understand</h4>
+      <ul>
+        <li>Apply for everything at once — benefits don't cancel each other out. CalWORKs/OWF, SNAP, WIC, Medicaid, and Housing Assistance are all meant to be received simultaneously.</li>
+        <li>Your children being infants is actually a significant advantage. Many programs prioritize families with infants under 2. Use this — say it clearly every time you call.</li>
+        <li>Keep a folder (physical or phone) with: birth certificates, your ID, Social Security cards, and any proof of address. You'll need these repeatedly.</li>
+        <li>Apply online OR by phone first, then follow up in person. Don't wait for an in-person appointment to start the clock on your benefits — backdating to your application date is real money.</li>
+        <li>If you are in Chico, CA — use 211 or call Butte County DESS at 1-877-410-8803. If in Alliance, OH — call Stark County JFS at 330-452-4661. These are your two most important phone numbers.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title" style="margin-top:20px;">🧠 Mental Health Support — National (Both Locations)</h2>
+    <p class="section-sub">These free, 24/7 lines are available to anyone in the US. Postpartum struggles are common and treatable — reaching out is not weakness, it's smart parenting.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Mom-Specific — 24/7</div>
+        <h3>National Maternal Mental Health Hotline</h3>
+        <p>Built specifically for pregnant and postpartum moms. Free, confidential, 24/7. Staffed by professional counselors who refer you to specialist providers. Available in 60+ languages.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18338526262"><strong>1-833-852-6262</strong></a> (call or text)</li>
+          <li><span class="ico">⚡</span>24/7 · English, Spanish + 60 languages</li>
+          <li><span class="ico">💡</span>Built for postpartum issues specifically — they understand</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Postpartum Helpline</div>
+        <h3>Postpartum Support International (PSI)</h3>
+        <p>Not a crisis line — but the best place to call if you're feeling overwhelmed, depressed, anxious, or "not yourself" since giving birth. They'll connect you to local postpartum providers and support groups. Free.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18009444773"><strong>1-800-944-4773</strong></a> (text or call)</li>
+          <li><span class="ico">🌐</span><a href="https://postpartum.net" target="_blank">postpartum.net</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8 AM – 11 PM ET · English & Spanish</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Text Line</div>
+        <h3>Crisis Text Line</h3>
+        <p>If calling feels too hard (or you can't talk because the babies are sleeping), text-based crisis support is available 24/7 with trained counselors. Free on any carrier.</p>
+        <ul class="contact-list">
+          <li><span class="ico">💬</span>Text <strong>HOME</strong> to <strong>741741</strong></li>
+          <li><span class="ico">🌐</span><a href="https://crisistextline.org" target="_blank">crisistextline.org</a></li>
+          <li><span class="ico">⚡</span>Anonymous · Free · 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:20px;">💰 Tax Credits — Money You're Owed (Even With No Income This Year)</h2>
+    <p class="section-sub">Single parents with children qualify for some of the largest refundable tax credits available. Even if you didn't work in 2026, file a return — there are credits that don't require earnings, and back-credits if you didn't file last year.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Refundable Credit</div>
+        <h3>Earned Income Tax Credit (EITC)</h3>
+        <p>The single largest anti-poverty cash benefit in the US. A single parent with two children can receive up to roughly <strong>$7,000 back</strong> at tax time, even if you only worked part of the year. The credit is <strong>refundable</strong> — you get cash back even if you owed no tax.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🌐</span><a href="https://www.irs.gov/eitc" target="_blank">irs.gov/eitc</a></li>
+          <li><span class="ico">💡</span>Even small W-2 earnings or 1099 work qualifies — file even if it was just $1,000</li>
+          <li><span class="ico">💡</span>You can file <strong>up to 3 years back</strong> — missed 2023 or 2024? Still possible.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Per-Child Credit</div>
+        <h3>Child Tax Credit (CTC)</h3>
+        <p>Up to <strong>$2,000 per child</strong> on your federal return. A portion is refundable (the "Additional CTC") meaning you get cash back even with low/no tax owed. For your two infants this can be up to $4,000 in addition to EITC.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🌐</span><a href="https://www.irs.gov/credits-deductions/individuals/child-tax-credit" target="_blank">irs.gov/ctc</a></li>
+          <li><span class="ico">💡</span>Requires children to have Social Security Numbers — get them early</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free DIY</div>
+        <h3>MyFreeTaxes.com — File Online Free</h3>
+        <p>United Way's free online tax filing platform. Designed for low-income filers with simple returns. Walks you through every credit you qualify for. Works on a phone.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🌐</span><a href="https://myfreetaxes.com" target="_blank">myfreetaxes.com</a></li>
+          <li><span class="ico">⚡</span>Federal + state, fully free, no income limit for self-prep</li>
+          <li><span class="ico">💡</span>Helpline if you get stuck: <a href="tel:18666982040">1-866-698-2040</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">In-Person Free Help</div>
+        <h3>VITA — Volunteer Income Tax Assistance</h3>
+        <p>Free in-person tax preparation by IRS-certified volunteers. Open seasonally, January through April. Bring photo ID, SSN cards for self and infants, and any income documents. Site finder below.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>IRS VITA locator: <a href="tel:18009069887">1-800-906-9887</a></li>
+          <li><span class="ico">🌐</span><a href="https://irs.treasury.gov/freetaxprep/" target="_blank">irs.treasury.gov/freetaxprep</a></li>
+          <li><span class="ico">📍</span>Chico VITA: see Chico tab · Alliance VITA: see Alliance tab</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:.9rem;color:var(--text-light);text-align:center;padding:16px 0;">
+      Use the tabs above to navigate to your location-specific guide, action checklists, and wait time information.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: CHICO, CA
+════════════════════════════════════════════ -->
+<div id="tab-chico" class="tab-content" data-print-title="Chico, CA — Butte County Resources">
+  <div class="container">
+    <div class="location-header">
+      <span class="loc-tag ca">📍 Chico, California — Butte County</span>
+      <span style="font-size:.85rem;color:var(--text-light);">All contact info current as of May 2026</span>
+    </div>
+
+    <h2 class="section-title">Chico, CA — Your Resources</h2>
+    <p class="section-sub">Butte County has strong state-funded programs. With two infants and no income, you are in the highest-priority tier for most of these.</p>
+
+    <!-- CASH + FOOD -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">💵 Cash, Food & Benefits — Apply These First</h3>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Cash Aid — Highest Priority</div>
+        <h3>CalWORKs (California TANF)</h3>
+        <p>Monthly cash aid of up to <strong>$983/mo</strong> for you + 2 infants (Butte County, Region 2, no income). Also includes Medi-Cal, CalFresh eligibility, childcare subsidies, and job training. Apply online or in person.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span><div><strong>Butte County DESS</strong><br>765 East Ave, Chico, CA 95926</div></li>
+          <li><span class="ico">📞</span><a href="tel:18774108803">1-877-410-8803</a> (toll-free)</li>
+          <li><span class="ico">🌐</span><a href="https://benefitscal.com" target="_blank">BenefitsCAL.com</a> (online apply)</li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8am–5pm</li>
+          <li><span class="ico">⚡</span>Approval: 7–30 days. Backdated to app date.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food — Apply Same Day as CalWORKs</div>
+        <h3>CalFresh (SNAP / Food Stamps)</h3>
+        <p>Up to <strong>$785/month</strong> in food benefits for a family of 3 with no income. If you qualify for "Expedited CalFresh," you can get benefits within <strong>3 business days</strong>. Applied automatically when you apply for CalWORKs.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>Same as CalWORKs — Butte County DESS</li>
+          <li><span class="ico">📞</span><a href="tel:18474108803">1-877-410-8803</a></li>
+          <li><span class="ico">📞</span>CDSS Statewide: <a href="tel:18778473663">(877) 847-3663</a></li>
+          <li><span class="ico">🌐</span><a href="https://benefitscal.com" target="_blank">BenefitsCAL.com</a></li>
+          <li><span class="ico">⚡</span>Expedited: 3 days. Regular: up to 30 days.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Food — Infants & Mothers</div>
+        <h3>WIC (Women, Infants & Children)</h3>
+        <p>Free supplemental foods including <strong>infant formula</strong>, cereals, milk, eggs, produce. Also provides breastfeeding support, nutrition counseling, and referrals. Both infants qualify automatically. You likely qualify too as a postpartum mother.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5305524025">(530) 552-4025</a> — Schedule appointment</li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecounty.net/1272" target="_blank">buttecounty.net/WIC</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8am–5pm</li>
+          <li><span class="ico">⚡</span>Appointments often available within 1 week</li>
+          <li><span class="ico">📍</span>Serves Chico, Oroville, Paradise, Gridley</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Healthcare — Free</div>
+        <h3>Medi-Cal (Free Health Insurance)</h3>
+        <p>Full, free medical coverage for you and both infants. Covers doctor visits, ER, prescriptions, dental, vision, immunizations, and mental health services. Automatically included with CalWORKs. Infants have immediate priority enrollment.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18774108803">1-877-410-8803</a> (Butte DESS)</li>
+          <li><span class="ico">📞</span>Covered CA Help: <a href="tel:18003001506">(800) 300-1506</a></li>
+          <li><span class="ico">🌐</span><a href="https://coveredca.com" target="_blank">CoveredCA.com</a></li>
+          <li><span class="ico">⚡</span>Infants often enrolled same day</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- HOUSING -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🏠 Housing Assistance</h3>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Affordable Housing</div>
+        <h3>Housing Authority of Butte County</h3>
+        <p>Section 8 Housing Choice Vouchers and affordable housing units. Apply immediately — waitlists exist but families with infants have priority points. Also connects to emergency housing navigators.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>2039 Forest Ave, Chico, CA 95928</li>
+          <li><span class="ico">📞</span><a href="tel:5308954474">(530) 895-4474</a></li>
+          <li><span class="ico">📧</span><a href="mailto:Info@Butte-Housing.com">Info@Butte-Housing.com</a></li>
+          <li><span class="ico">🌐</span><a href="http://www.butte-housing.com" target="_blank">butte-housing.com</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8am–5pm | 24/7 drop box available</li>
+          <li><span class="ico">⚡</span>Section 8 waitlist: 1–3 years. Emergency housing: call same day.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Emergency Shelter</div>
+        <h3>City of Chico Shelter Assessment</h3>
+        <p>If you need shelter tonight, call the City's Shelter Interest Line. You'll be assessed for family shelters. Women with infants are a priority. Don't wait — shelter availability changes daily.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5308975890">(530) 897-5890</a> — Shelter Interest Line</li>
+          <li><span class="ico">🌐</span><a href="https://chicoca.gov/Housing" target="_blank">chicoca.gov/Housing</a></li>
+          <li><span class="ico">⚡</span>Call anytime — leave your legal name and location</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Transitional Housing</div>
+        <h3>NVCSS — Northern Valley Catholic Social Service</h3>
+        <p>Transitional and permanent supportive housing for families across northern CA. Free mental health, housing navigation, and family support services. You do NOT need to be Catholic.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5302410552">(530) 241-0552</a></li>
+          <li><span class="ico">🌐</span><a href="https://nvcss.org" target="_blank">nvcss.org</a></li>
+          <li><span class="ico">📍</span>Butte County branch office, Chico</li>
+          <li><span class="ico">⚡</span>Free to all regardless of religion or background</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- FOOD BANKS -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🍎 Food Banks & Immediate Food Help</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food Bank</div>
+        <h3>North State Food Bank</h3>
+        <p>Distributes food throughout Butte, Glenn, Colusa, Plumas, Sierra and Tehama Counties. Multiple programs for low-income families. No appointment needed for walk-in distributions.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>2640 S. 5th Ave, Oroville, CA</li>
+          <li><span class="ico">📞</span><a href="tel:5307122600">(530) 712-2600</a></li>
+          <li><span class="ico">🌐</span><a href="https://buttecaa.com" target="_blank">buttecaa.com</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food Box</div>
+        <h3>Chico Rescue Mission</h3>
+        <p>Food boxes available every Tuesday at 10am. No appointment needed. Walk-in service.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>2612 Esplanade, Chico, CA</li>
+          <li><span class="ico">📞</span><a href="tel:5303431935">(530) 343-1935</a></li>
+          <li><span class="ico">📧</span><a href="mailto:chicorescuemission@yahoo.com">chicorescuemission@yahoo.com</a></li>
+          <li><span class="ico">⏰</span>Every Tuesday, 10:00 AM</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- UTILITIES -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">💡 Utilities & Phone Assistance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Energy Bills</div>
+        <h3>LIHEAP — Energy Assistance</h3>
+        <p>Helps with heating and cooling bills for low-income households. Especially important for families with infants (temperature regulation is critical). Apply when the season opens.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:8666756623">(866) 675-6623</a></li>
+          <li><span class="ico">📞</span>Butte CAA: <a href="tel:5303459491">(530) 345-9491</a></li>
+          <li><span class="ico">🏢</span>541 Normal Ave., Chico, CA 95928</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Phone</div>
+        <h3>California LifeLine — Free/Low-Cost Phone</h3>
+        <p>Low-income households get discounted or free cell or home phone service. Essential for contacting agencies, scheduling appointments, and emergencies with infants.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:8662720349">(866) 272-0349</a></li>
+          <li><span class="ico">🌐</span><a href="https://californialifeline.com" target="_blank">californialifeline.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DOMESTIC VIOLENCE / SAFETY -->
+    <h3 style="font-size:1.1rem;color:var(--rose);margin-bottom:16px;font-weight:600;">🆘 Safety — Domestic Violence Support</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">24-Hour Hotline + Shelter</div>
+        <h3>Catalyst Domestic Violence Services</h3>
+        <p>The only Butte County agency dedicated solely to domestic and sexual violence survivors. Runs <strong>HAVEN</strong>, a confidential shelter for survivors and their children (pets welcome) for up to 6 months. Free crisis counseling, drop-in support, and restraining order help — confidential and at no cost. Mothers with infants are highest priority.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18008958476"><strong>(800) 895-8476</strong></a> — 24-hour hotline</li>
+          <li><span class="ico">🌐</span><a href="https://catalystdvsv.org" target="_blank">catalystdvsv.org</a></li>
+          <li><span class="ico">⚡</span>Staffed 24/7 by trained crisis counselors</li>
+          <li><span class="ico">🔒</span>All services 100% confidential and free</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">National Backup</div>
+        <h3>National Domestic Violence Hotline</h3>
+        <p>If you can't reach Catalyst or need to talk to someone outside your area, the national hotline is staffed 24/7 and can connect you to local Butte County resources, safety plan with you, or stay on the line during a crisis.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18007997233"><strong>1-800-799-7233</strong></a></li>
+          <li><span class="ico">💬</span>Text <strong>"START"</strong> to 88788</li>
+          <li><span class="ico">🌐</span><a href="https://thehotline.org" target="_blank">thehotline.org</a> (web chat available)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BABY SUPPLIES & CHILD SAFETY -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">👶 Baby Supplies, Diapers & Car Seats</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Baby Clothing & Supplies</div>
+        <h3>Women's Resource Clinic — Chico Baby Boutique</h3>
+        <p>Free baby clothes, diapers, blankets, and infant supplies through their boutique. Also offers free pregnancy testing, ultrasounds, options education, and parenting classes. Open to all — no payment, no insurance needed.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>115 W 2nd Ave, Chico, CA 95926</li>
+          <li><span class="ico">📞</span><a href="tel:5308976101">(530) 897-6101</a> · 24-hr line: <a href="tel:5308976100">(530) 897-6100</a></li>
+          <li><span class="ico">⏰</span>Mon–Thu, 10 AM – 5 PM · Fri, 10 AM – 1 PM</li>
+          <li><span class="ico">🌐</span><a href="https://www.womensresourceclinic.org" target="_blank">womensresourceclinic.org</a></li>
+          <li><span class="ico">💡</span>Ask about parenting class incentives — sometimes bigger items earned</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free Car Seats</div>
+        <h3>Butte County Car Seat Program</h3>
+        <p>Free or low-cost car seats for Butte County families, plus free installation classes and one-on-one appointments. Required by California law (children must be in a car seat through age 8 / 4'9"). Especially important for infants — both will need rear-facing seats.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18003392941">1-800-339-2941</a> — Leave voicemail with name, number, reason</li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecounty.net/874/Car-Seat-Program" target="_blank">buttecounty.net/Car-Seat-Program</a></li>
+          <li><span class="ico">🏢</span>CHP Chico inspections: <strong>413 Southgate Ave</strong>, Wednesdays 8:30–11:30 AM</li>
+          <li><span class="ico">⚡</span>Bi-monthly classes in Chico & Oroville</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Diapers</div>
+        <h3>Diaper Help — How to Get Them Free</h3>
+        <p><strong>Note:</strong> The former Butte Diaper Bank is no longer active. Current options: <em>(1)</em> Call <strong>211</strong> daily — they track which local pantries currently have diapers. <em>(2)</em> Most food banks (Chico Rescue Mission, North State Food Bank) sometimes include diapers in distributions. <em>(3)</em> WIC covers infant <strong>formula</strong> — that frees up cash for diapers.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:211">2-1-1</a> or <a href="tel:18003459491">(800) 345-9491</a> — Ask "who is distributing diapers this week?"</li>
+          <li><span class="ico">📞</span>North State Food Bank: <a href="tel:5307122600">(530) 712-2600</a></li>
+          <li><span class="ico">💡</span>Ask Catalyst (above) — they often have emergency diapers for shelter clients</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HEALTH CLINICS (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🏥 Free / Sliding-Scale Health Clinics — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Federally Qualified Health Center</div>
+        <h3>Ampla Health — Chico Medical, Dental & Pediatrics</h3>
+        <p>FQHC serving everyone regardless of ability to pay. Sliding-scale fees by income. Same-day and walk-in pediatric appointments often available. <strong>Accepts Medi-Cal and the uninsured.</strong> One-stop shop: well-baby visits, immunizations, prescriptions, behavioral health, and dental — all under one roof.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>680 Cohasset Rd, Chico, CA 95926</li>
+          <li><span class="ico">📞</span><a href="tel:5303424395">(530) 342-4395</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.amplahealth.org" target="_blank">amplahealth.org</a></li>
+          <li><span class="ico">⚡</span>Walk-in Xpress Care available · uninsured welcome</li>
+          <li><span class="ico">💡</span>Tell them you have Medi-Cal for both infants — same-day pediatric scheduling</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Free Legal Help</div>
+        <h3>Legal Services of Northern California (LSNC) — Chico</h3>
+        <p>Free legal aid for CalWORKs, CalFresh, Medi-Cal, SSI, housing, and benefits denials. If your application is denied or terminated, <strong>request a Fair Hearing within 90 days</strong> — LSNC will help you appeal at no cost. Income limit ≈ $19,000/yr single (you qualify with no income).</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>541 Normal Avenue, Chico, CA 95928</li>
+          <li><span class="ico">📞</span><a href="tel:5303459491">(530) 345-9491</a></li>
+          <li><span class="ico">🌐</span><a href="https://lsnc.net/office/chico" target="_blank">lsnc.net/office/chico</a></li>
+          <li><span class="ico">⚡</span>100% free — never accept payment from clients</li>
+          <li><span class="ico">💡</span>Free help with restraining orders and family law too</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MENTAL HEALTH (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🧠 Mental Health & Counseling — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Free Counseling</div>
+        <h3>NVCSS — Northern Valley Catholic Social Service</h3>
+        <p>Free mental health counseling for low-income parents in Butte County. Sliding scale (effectively free if you're on CalWORKs/Medi-Cal). Includes postpartum-aware therapists. You do NOT need to be Catholic. They can also see you on Medi-Cal at no cost.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5302410552">(530) 241-0552</a></li>
+          <li><span class="ico">🌐</span><a href="https://nvcss.org" target="_blank">nvcss.org</a></li>
+          <li><span class="ico">💡</span>Ask specifically for <strong>"perinatal"</strong> or <strong>"postpartum"</strong> services if available</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">County Mental Health</div>
+        <h3>Butte County Behavioral Health</h3>
+        <p>County crisis line and outpatient mental health for Medi-Cal members and uninsured residents. 24/7 crisis number — call before going to the ER if it's not a medical emergency.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Crisis line 24/7: <a href="tel:18003343616">1-800-334-6622</a></li>
+          <li><span class="ico">📞</span>Access line: <a href="tel:5308913555">(530) 891-3555</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecounty.net/behavioralhealth" target="_blank">buttecounty.net/behavioralhealth</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHILDCARE (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🧸 Childcare Subsidies — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Automatic for CalWORKs</div>
+        <h3>CalWORKs Stage 1 Child Care</h3>
+        <p>If you're approved for CalWORKs, you automatically qualify for <strong>Stage 1 subsidized child care</strong>. This applies while you're job-searching, in training, or in welfare-to-work activities. It's generally <strong>no waitlist</strong> for active CalWORKs recipients. Specifically request the <strong>CCP1 form</strong>.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Butte DESS: <a href="tel:18774108803">1-877-410-8803</a> (ask for "Stage 1 child care")</li>
+          <li><span class="ico">📞</span>Resource & Referral: Valley Oak Children's Services <a href="tel:5308953572">(530) 895-3572</a> or <a href="tel:18003458627">(800) 345-8627</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.cdss.ca.gov/inforesources/calworks-child-care" target="_blank">cdss.ca.gov — CalWORKs Child Care</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Find a Provider</div>
+        <h3>Valley Oak Children's Services (R&R)</h3>
+        <p>Butte County's official Child Care Resource & Referral agency. Free help finding licensed daycares and family child care homes that accept subsidy. They know which providers have current openings.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5308953572">(530) 895-3572</a> / <a href="tel:18003458627">(800) 345-8627</a></li>
+          <li><span class="ico">🌐</span><a href="https://valleyoakchildren.org" target="_blank">valleyoakchildren.org</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAX HELP (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">💰 Free Tax Help — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Free Tax Prep — Seasonal</div>
+        <h3>VITA at Tri Counties Bank — Chico</h3>
+        <p>Free in-person tax preparation by Chico State Business students (IRS-certified). Open during tax season (Jan–April). Bring photo ID, SSNs for self and both infants, and any income docs. Walk in or call ahead.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>780 Mangrove Avenue, Chico, CA 95926</li>
+          <li><span class="ico">⏰</span>Tuesdays & Thursdays, 9 AM – 5 PM (tax season)</li>
+          <li><span class="ico">📞</span>CAABCI: <a href="tel:5307122883">(530) 712-2883</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecaa.com/tax-preparation-assistance/" target="_blank">buttecaa.com/tax-preparation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHILDREN, CUSTODY & FAMILY LAW (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">👨‍👩‍👧 Child Services, Custody & Family Law — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Voluntary Family Support</div>
+        <h3>Butte County Children's Services Division</h3>
+        <p>Beyond CPS investigations, this division offers <strong>voluntary family support</strong>, parenting classes, in-home services, and connections to early-childhood programs. If you're <em>asking for help</em> (not being reported), they can provide concrete services to keep your family stable. Open with: <em>"I'm asking for voluntary family services."</em></p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>765 East Avenue, Suite 120, Chico, CA 95926</li>
+          <li><span class="ico">📞</span><a href="tel:5308793731">(530) 879-3731</a> · Toll-free: <a href="tel:18004000902">1-800-400-0902</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 7:30 AM – 5 PM (24-hour emergency response available)</li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecounty.net/430/Childrens-Services" target="_blank">buttecounty.net/Childrens-Services</a></li>
+          <li><span class="ico">💡</span>Asking for services voluntarily is very different from being reported — it's not held against you</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Establish & Collect Child Support</div>
+        <h3>Butte County Dept of Child Support Services (DCSS)</h3>
+        <p>Free help establishing paternity and collecting child support — at no cost to you. Even if the other parent is uninvolved, in jail, or out of state, DCSS can locate them, establish a court order, and collect payments through wage garnishment automatically. <strong>You do NOT need a lawyer.</strong></p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Statewide: <a href="tel:18669013212">(866) 901-3212</a></li>
+          <li><span class="ico">📞</span>Butte DCSS local: <a href="tel:5308912080">(530) 891-2080</a></li>
+          <li><span class="ico">🌐</span><a href="https://childsupport.ca.gov" target="_blank">childsupport.ca.gov</a> (apply online)</li>
+          <li><span class="ico">💡</span>You can keep this <strong>completely private</strong> from CalWORKs — your name does not have to be shared with the other parent</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Custody / Family Court Forms</div>
+        <h3>SHARP — Butte County Court Self-Help</h3>
+        <p>The Superior Court's <strong>free Self-Help and Referral Program</strong>. Helps with child custody, child support, parentage, visitation, restraining orders, and emergency custody — including same-day walk-in help for urgent matters. Family Law Facilitators assist with all the court forms (you don't need a lawyer to file).</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1775 Concord Ave, Chico, CA</li>
+          <li><span class="ico">📞</span><a href="tel:5305327015">(530) 532-7015</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8:30 AM – 4 PM</li>
+          <li><span class="ico">🌐</span><a href="https://www.butte.courts.ca.gov/self-help/about-sharp" target="_blank">butte.courts.ca.gov/SHARP</a></li>
+          <li><span class="ico">⚡</span>Walk-in same-day help for restraining orders and emergency custody</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Free Family Lawyer</div>
+        <h3>LSNC Chico — Family Law Unit</h3>
+        <p>Legal Services of Northern California has attorneys who handle <strong>custody, paternity, divorce, restraining orders, and child support disputes</strong> for free if you qualify by income (you qualify with no income). They can actually represent you in court — not just give advice.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>541 Normal Avenue, Chico, CA 95928</li>
+          <li><span class="ico">📞</span><a href="tel:5303459491">(530) 345-9491</a></li>
+          <li><span class="ico">🌐</span><a href="https://lsnc.net/office/chico" target="_blank">lsnc.net/office/chico</a></li>
+          <li><span class="ico">⚡</span>Always free — never accept any payment</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Law Student Free Help</div>
+        <h3>CLIC — Community Legal Information Clinic (Chico State)</h3>
+        <p>Chico State's free legal info clinic. Law student volunteers help with <strong>family law forms, restraining orders, paternity, and small claims</strong> under attorney supervision. Great when LSNC has a wait. Walk-ins welcome during clinic hours.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5308984354">(530) 898-4354</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.csuchico.edu/clic/" target="_blank">csuchico.edu/clic</a></li>
+          <li><span class="ico">💡</span>Free Family Law Project — supervised by California-licensed attorneys</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Custody + DV Combined</div>
+        <h3>Catalyst Legal Advocacy</h3>
+        <p>If domestic violence is part of your custody situation, Catalyst's legal advocates help you file <strong>restraining orders, emergency custody orders, and divorce filings</strong> at no cost. They go with you to court hearings if needed. Faster, safer track than going through general family court alone.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>24-hr hotline: <a href="tel:18008958476"><strong>(800) 895-8476</strong></a></li>
+          <li><span class="ico">🌐</span><a href="https://catalystdvsv.org/programs/legal-advocacy/" target="_blank">catalystdvsv.org/legal-advocacy</a></li>
+          <li><span class="ico">⚡</span>Free legal advocacy at every step — confidential</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EARLY HEAD START + LIBRARY (CHICO) -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🎓 Free Education & Family Programs — Chico</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free Childcare + Education</div>
+        <h3>E Center Early Head Start — Butte County</h3>
+        <p>Free, federally-funded program for <strong>pregnant moms and children ages 0–3</strong>. Includes child development, health & dental, mental health support, family services, and home visits. Part-day, full-day, and home-based options. <strong>Both infants qualify.</strong></p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:5307412995">(530) 741-2995</a></li>
+          <li><span class="ico">🌐</span><a href="https://ecenter.org/our-programs/head-start-program/" target="_blank">ecenter.org</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8 AM – 5 PM</li>
+          <li><span class="ico">⚡</span>Apply online — staff contacts in 1–6 weeks to schedule intake</li>
+          <li><span class="ico">💡</span>Pregnant moms qualify too — start during pregnancy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Free Internet + Resources</div>
+        <h3>Butte County Public Library — Chico Branch</h3>
+        <p><strong>Free library card · free Wi-Fi · free computer use · free printing (limited).</strong> Critical for filing online applications, calling agencies (quiet study rooms), and free children's programs. Library cards open even with no permanent address — bring shelter letter or mail.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1108 Sherman Ave, Chico, CA 95926</li>
+          <li><span class="ico">📞</span><a href="tel:5305525652">(530) 552-5652</a></li>
+          <li><span class="ico">⏰</span>Tue–Thu 10–6 · Fri/Sat 10–5 · Sun 1–5 · Closed Mon</li>
+          <li><span class="ico">🌐</span><a href="https://www.buttecounty.net/528/Library" target="_blank">buttecounty.net/Library</a></li>
+          <li><span class="ico">💡</span>Story time for babies/toddlers — free socialization for infants AND a break for you</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TRANSPORTATION -->
+    <h3 style="font-size:1.1rem;color:var(--teal);margin-bottom:16px;font-weight:600;">🚌 Transportation</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Public Bus</div>
+        <h3>B-Line — Butte Regional Transit</h3>
+        <p>Covers Chico, Oroville, Paradise, Gridley. Local fare $2 / regional $3 / all-day pass $6. <strong>Discounted fare $1–$1.50</strong> for seniors, disabled, Medicare. Children under 4 ride <strong>free</strong> when accompanied. Stroller and infant carrier are fine on board. CalWORKs and Medi-Cal often cover transit to appointments — ask your caseworker about bus passes.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🌐</span><a href="https://www.blinetransit.com" target="_blank">blinetransit.com</a></li>
+          <li><span class="ico">📞</span><a href="tel:5303425480">(530) 342-5480</a></li>
+          <li><span class="ico">💡</span>Ask your CalWORKs worker about <strong>"Welfare-to-Work transportation"</strong> — bus passes provided</li>
+          <li><span class="ico">💡</span>Medi-Cal Non-Emergency Medical Transport (NEMT): call your plan</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: ALLIANCE, OH
+════════════════════════════════════════════ -->
+<div id="tab-alliance" class="tab-content" data-print-title="Alliance, OH — Stark County Resources">
+  <div class="container">
+    <div class="location-header">
+      <span class="loc-tag oh">📍 Alliance, Ohio — Stark County</span>
+      <span style="font-size:.85rem;color:var(--text-light);">All contact info current as of May 2026</span>
+    </div>
+
+    <h2 class="section-title">Alliance, OH — Your Resources</h2>
+    <p class="section-sub">Stark County has a solid safety net coordinated through JFS. Alliance specifically has the YWCA, Alliance for Children & Families, and its own WIC office.</p>
+
+    <!-- CASH + FOOD -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">💵 Cash, Food & Benefits — Apply These First</h3>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Cash Aid — Highest Priority</div>
+        <h3>Ohio Works First (OWF / TANF)</h3>
+        <p>Ohio's TANF program. Provides <strong>cash benefits up to 36 months</strong> for eligible families. A family of 3 with no income typically receives <strong>$400–$500/month</strong>. Apply by phone, online, or in person. Also unlocks Medicaid, SNAP, and childcare assistance.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>Stark County JFS, 221 3rd St SE, Canton, OH 44702</li>
+          <li><span class="ico">📞</span><a href="tel:3304524661">(330) 452-4661</a> | Toll-free: <a href="tel:18886986893">(888) 698-6893</a></li>
+          <li><span class="ico">📞</span>Apply by phone: <a href="tel:18446406446">1-844-640-6446</a></li>
+          <li><span class="ico">🌐</span><a href="https://benefits.ohio.gov" target="_blank">benefits.ohio.gov</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8am–4pm</li>
+          <li><span class="ico">⚡</span>Processing: 7–30 days. Benefits backdated to app date.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food — Apply Same Day as OWF</div>
+        <h3>SNAP (Food Assistance / Direction Card)</h3>
+        <p>Ohio's food stamps program. A family of 3 with zero income qualifies for up to <strong>$785/month</strong>. Applied at the same office as OWF/TANF. You can also apply online at benefits.ohio.gov. Expedited processing available if in immediate need.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>Stark County JFS — same as OWF above</li>
+          <li><span class="ico">📞</span><a href="tel:8446406446">1-844-640-6446</a></li>
+          <li><span class="ico">🌐</span><a href="https://benefits.ohio.gov" target="_blank">benefits.ohio.gov</a></li>
+          <li><span class="ico">⚡</span>Expedited: 3–7 days. Regular: up to 30 days.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Food — Infants & Mothers</div>
+        <h3>WIC — Alliance City Health Dept</h3>
+        <p>WIC for Alliance city residents is handled through the Alliance City Health Department. Provides infant formula, cereals, produce, milk, and eggs. Also offers breastfeeding support and referrals. Both infants qualify.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>537 E. Market Street, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308213929">(330) 821-3929</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 8:30am–4:00pm</li>
+          <li><span class="ico">⚡</span>Call same week — appointments often available quickly</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Healthcare — Free</div>
+        <h3>Ohio Medicaid</h3>
+        <p>Full free health coverage for you and both infants. Covers doctor visits, ER, prescriptions, dental, vision, mental health, and immunizations. Applied simultaneously with OWF/SNAP at Stark County JFS.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Stark JFS: <a href="tel:3304524661">(330) 452-4661</a></li>
+          <li><span class="ico">📞</span>Ohio Benefits: <a href="tel:18446406446">1-844-640-6446</a></li>
+          <li><span class="ico">🌐</span><a href="https://benefits.ohio.gov" target="_blank">benefits.ohio.gov</a></li>
+          <li><span class="ico">⚡</span>Infants often enrolled immediately upon application</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- HOUSING -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🏠 Housing Assistance</h3>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Emergency & Transitional Housing</div>
+        <h3>Alliance for Children & Families</h3>
+        <p>Has a 12-unit Permanent Supportive Housing (PSH) project in Alliance specifically for homeless families with minor children. Campus-based with on-site wellness clinic, case management, counseling, and educational services. <strong>First step: call the Homeless Hotline.</strong></p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>624 Scranton Ave, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308296332">(330) 821-6332</a> / (330) 829-9104</li>
+          <li><span class="ico">📞</span>Homeless Hotline: <a href="tel:3304524363">(330) 452-4363</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.allianceforchildrenandfamilies.org" target="_blank">allianceforchildrenandfamilies.org</a></li>
+          <li><span class="ico">⚡</span>Call hotline first — they pre-screen for housing programs</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Transitional Housing</div>
+        <h3>YWCA of Alliance</h3>
+        <p>YWCA Alliance provides transitional housing specifically for women and children. Also offers financial coaching (free 1-on-1 with a financial coach for residents), transportation assistance, and other support services.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>239 E Market St, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308231840">(330) 823-1840</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.allianceywca.org" target="_blank">allianceywca.org</a></li>
+          <li><span class="ico">⚡</span>Call to schedule intake or do intake over the phone</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Affordable Housing</div>
+        <h3>Stark Metro Housing Authority (SMHA)</h3>
+        <p>Administers Section 8 vouchers and affordable housing units for Stark County. Apply immediately even if there's a waitlist — families with children get priority points.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>400 E Tuscarawas St, Canton, OH 44702</li>
+          <li><span class="ico">📞</span><a href="tel:3304548051">(330) 454-8051</a></li>
+          <li><span class="ico">🌐</span><a href="https://starkmha.org" target="_blank">starkmha.org</a></li>
+          <li><span class="ico">⚡</span>Section 8 waitlist: 1–3 years. Apply now regardless.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- FOOD + UTILITY -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🍎 Food Pantries & Emergency Help</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food Pantry</div>
+        <h3>Alliance Community Pantry</h3>
+        <p>Food choice pantry — you select what you need (like a food shopping experience).</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3306808130">(330) 680-8130</a></li>
+          <li><span class="ico">⏰</span>Mon & Wed 4–7 PM | Tue 9am–Noon</li>
+          <li><span class="ico">🌐</span><a href="https://alliancecommunitypantry.org" target="_blank">alliancecommunitypantry.org</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Food Bank</div>
+        <h3>Akron Canton Regional Food Bank</h3>
+        <p>Provides both direct distributions and referrals to community partner sites throughout Stark County.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1365 Cherry Ave NE, Canton, OH 44714</li>
+          <li><span class="ico">📞</span><a href="tel:3305356900">(330) 535-6900</a></li>
+          <li><span class="ico">🌐</span><a href="https://akroncantonfoodbank.org" target="_blank">akroncantonfoodbank.org</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Emergency & Utility Help</div>
+        <h3>Salvation Army — Alliance</h3>
+        <p>Emergency food, utility assistance, and other crisis support for Alliance and Eastern Stark County residents.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3308235188">(330) 823-5188</a> (Alliance/Eastern Stark)</li>
+          <li><span class="ico">⚡</span>Call for emergency assistance — often same-day response</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Utility Assistance</div>
+        <h3>HEAP — Stark County Community Action Agency (SCCAA)</h3>
+        <p>Home Energy Assistance Program (HEAP) helps pay heating/cooling bills. Critical for homes with infants.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1366 Market Ave N, Canton, OH 44714</li>
+          <li><span class="ico">📞</span><a href="tel:3304541676">(330) 454-1676</a></li>
+          <li><span class="ico">🌐</span><a href="https://sccaa.org" target="_blank">sccaa.org</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INFANT-SPECIFIC -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">👶 Infant & Child Development Support</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Child Development</div>
+        <h3>Help Me Grow — Stark County</h3>
+        <p>Free developmental screening, referrals, and support services for children from birth to age 3. Helps identify any developmental concerns early and connects families to services.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3304928136">(330) 492-8136</a></li>
+          <li><span class="ico">🌐</span><a href="https://helpmegrow.org" target="_blank">helpmegrow.org</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DOMESTIC VIOLENCE / SAFETY -->
+    <h3 style="font-size:1.1rem;color:var(--rose);margin-bottom:16px;font-weight:600;">🆘 Safety — Domestic Violence Support</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">24-Hour Hotline + Shelter</div>
+        <h3>Alliance Area Domestic Violence Shelter</h3>
+        <p>Free emergency shelter for women and children fleeing abuse — right here in Alliance. No referral needed; victims may call the hotline anytime, day or night, to be admitted. Includes food, clothing, case management, counseling, legal advocacy, transportation, child care, and help with housing, jobs, and GED.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3308237223"><strong>(330) 823-7223</strong></a> — 24-hour crisis hotline</li>
+          <li><span class="ico">🌐</span><a href="https://alliancedomesticviolenceshelter.org" target="_blank">alliancedomesticviolenceshelter.org</a></li>
+          <li><span class="ico">📬</span>P.O. Box 3622, Alliance, OH 44601</li>
+          <li><span class="ico">⚡</span>All services are FREE. No referral required.</li>
+          <li><span class="ico">🔒</span>Shelter location confidential — given on intake</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">National Backup</div>
+        <h3>National Domestic Violence Hotline</h3>
+        <p>If you can't reach the Alliance shelter or need to talk to someone outside your area, the national hotline is staffed 24/7 and can connect you to local Stark County resources, safety plan with you, or stay on the line during a crisis.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:18007997233"><strong>1-800-799-7233</strong></a></li>
+          <li><span class="ico">💬</span>Text <strong>"START"</strong> to 88788</li>
+          <li><span class="ico">🌐</span><a href="https://thehotline.org" target="_blank">thehotline.org</a> (web chat available)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BABY SUPPLIES & DIAPERS -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">👶 Baby Supplies, Diapers, Cribs & Car Seats</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">One-Stop Baby Supplies</div>
+        <h3>Alliance Pregnancy Center</h3>
+        <p>Free <strong>baby clothes, diapers, formula, car seats, AND cribs</strong> all in one place. Designed for pregnant and new mothers — they understand what you actually need. Open to all, no insurance, no income test.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>75 Glamorgan St, Suite 103, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308217283">(330) 821-7283</a></li>
+          <li><span class="ico">⚡</span>Call ahead to confirm hours and what's currently in stock</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free Crib (Safe Sleep)</div>
+        <h3>Cribs for Kids — Stark County Health Dept</h3>
+        <p>Free portable cribette ("pack-n-play") and sleep sack to families who need a safe sleep environment for their baby. <strong>Required to attend a free 1-hour Safe Sleep class</strong> first. Crucial: infants under 1 are at risk for SIDS — a safe sleep space is non-negotiable.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3304939928">(330) 493-9928</a></li>
+          <li><span class="ico">🌐</span><a href="https://starkhealth.org" target="_blank">starkhealth.org</a> → Safe Sleep & Cribs for Kids</li>
+          <li><span class="ico">⚡</span>You get TWO cribettes if you have twins or two infants — ask</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Free Children's Clothing</div>
+        <h3>Michael's World Clothing Ministry</h3>
+        <p>Free children's clothing for families in the Alliance/Sebring area. Walk in during open hours, take what you need.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>First Christian Church, 333 E. Market St, Alliance, OH 44601</li>
+          <li><span class="ico">⏰</span>Mondays 11 AM – 3 PM · Thursdays 2 PM – 5 PM</li>
+          <li><span class="ico">⚡</span>No paperwork, no income check</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Free Diapers</div>
+        <h3>Salvation Army Alliance — Diaper Distribution</h3>
+        <p>Heart of Ohio Diaper Bank distributes free diapers, baby wipes, and period products through The Salvation Army in Alliance. One supply per family per month. Walk in during open hours — no appointment needed.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>57 W. Main Street, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308235188">(330) 823-5188</a></li>
+          <li><span class="ico">⏰</span>Mon–Fri, 10 AM – 2 PM</li>
+          <li><span class="ico">⚡</span>One distribution per family, per month</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Free Diapers</div>
+        <h3>Alliance Commons — Diaper Distribution</h3>
+        <p>Second Alliance distribution site for Heart of Ohio Diaper Bank. Walk-in or appointment.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>405 S Linden Ave, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308298183">(330) 829-8183</a></li>
+          <li><span class="ico">⏰</span>Mon–Thu, 10 AM – Noon</li>
+          <li><span class="ico">🌐</span><a href="https://www.heartofohiodiaperbank.org" target="_blank">heartofohiodiaperbank.org</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free Car Seats</div>
+        <h3>Ohio Buckles Buckeyes (OBB) Program</h3>
+        <p>Ohio Dept of Health–funded free car seat program coordinated regionally by Stark County Health Department. Income eligibility usually mirrors WIC. Requires brief educational class. Both infants will need rear-facing seats by law.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>Stark County Health Dept (regional coordinator)</li>
+          <li><span class="ico">📞</span>Stark County Health: <a href="tel:3304934562">(330) 493-4562</a></li>
+          <li><span class="ico">🌐</span><a href="https://starkhealth.org" target="_blank">starkhealth.org</a> → Injury Prevention</li>
+          <li><span class="ico">💡</span>Also ask your WIC office (330) 821-3929 — they often coordinate appointments</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HEALTH CLINICS (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🏥 Free / Sliding-Scale Health Clinics — Alliance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Local Pediatric Clinic</div>
+        <h3>Alliance Family Health Center</h3>
+        <p>Non-profit primary care in Alliance with extended hours, same-day & next-day appointments, and walk-ins. Includes <strong>pediatrics, women's health, behavioral health, and a 340B discount pharmacy</strong> (much cheaper prescriptions). Accepts Medicaid; sliding-scale for uninsured.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1401 S. Arch Ave, Suite A, Alliance, OH 44601</li>
+          <li><span class="ico">🏢</span>Also: 110 W. Cambridge, Alliance</li>
+          <li><span class="ico">📞</span>Family Practice / Walk-In: <a href="tel:3305967581">(330) 596-7581</a></li>
+          <li><span class="ico">📞</span>Women's Health: <a href="tel:3305967580">(330) 596-7580</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.alliancefamilyhealth.org" target="_blank">alliancefamilyhealth.org</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">FQHC Alternative</div>
+        <h3>Good Samaritan Community Health Center</h3>
+        <p>Federally Qualified Health Center serving Alliance. Family medicine, internal medicine, mental health counseling, clinical social work. Accepts Medicaid and sliding-scale for the uninsured.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Call to confirm current hours & address — services rotate.</li>
+          <li><span class="ico">💡</span>Or ask 2-1-1 to refer you to the nearest open FQHC pediatric appointment</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Free Legal Help</div>
+        <h3>Community Legal Aid — Canton (serves Alliance)</h3>
+        <p>Free civil legal aid for low-income Stark County residents. Covers <strong>benefits appeals</strong> (OWF, SNAP, Medicaid), housing/eviction, custody, child support, domestic violence orders, and consumer issues. <strong>Request a State Hearing within 90 days</strong> of any benefit denial — they'll help you file and represent you.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>401 Market Ave N, Suite 101, Canton, OH 44702</li>
+          <li><span class="ico">📞</span><a href="tel:18009989454"><strong>1-800-998-9454</strong></a> (HelpLine)</li>
+          <li><span class="ico">⏰</span>HelpLine: Mon & Wed 9 AM–Noon · Tue & Thu 1–4 PM</li>
+          <li><span class="ico">🌐</span><a href="https://www.communitylegalaid.org" target="_blank">communitylegalaid.org</a></li>
+          <li><span class="ico">⚡</span>100% free for income-eligible clients (you qualify with no income)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MENTAL HEALTH (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🧠 Mental Health & Counseling — Alliance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Community Mental Health</div>
+        <h3>CommQuest Services — Alliance</h3>
+        <p>Free or sliding-scale counseling, mental health, and addiction services for Stark County residents. Accepts Medicaid. Includes therapy for postpartum depression, anxiety, trauma, and parenting stress.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1207 W State St, Suite M, Alliance, OH 44601</li>
+          <li><span class="ico">📞</span><a href="tel:3308218407">(330) 821-8407</a></li>
+          <li><span class="ico">🌐</span><a href="https://commquest.org" target="_blank">commquest.org</a></li>
+          <li><span class="ico">⚡</span>Crisis line: <a href="tel:3304520070">(330) 452-0070</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">County Crisis Line</div>
+        <h3>Stark County Crisis Intervention</h3>
+        <p>24/7 mental health crisis support for anyone in Stark County, including Alliance. Use this before going to the ER for mental health emergencies — they can de-escalate, send a mobile crisis team to your location, and avoid hospitalization when possible.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><strong>24/7 Crisis:</strong> <a href="tel:3304520070">(330) 452-0070</a></li>
+          <li><span class="ico">⚡</span>Mobile crisis team available in Stark County</li>
+          <li><span class="ico">⚡</span>Use this before going to the ER for non-medical crises</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHILDCARE (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🧸 Childcare Subsidies — Alliance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Publicly Funded Child Care</div>
+        <h3>Ohio PFCC — Apply Through Stark JFS</h3>
+        <p>Ohio's <strong>Publicly Funded Child Care (PFCC)</strong> covers childcare costs for low-income working families and parents in school or job training. Initial eligibility is up to <strong>145% of federal poverty</strong>, with a sliding copay up to 300% as income rises. Apply at the same office where you applied for OWF.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Stark County JFS: <a href="tel:3304524661">(330) 452-4661</a></li>
+          <li><span class="ico">🌐</span><a href="https://benefits.ohio.gov" target="_blank">benefits.ohio.gov</a> (apply online)</li>
+          <li><span class="ico">🌐</span><a href="https://starkjfs.org" target="_blank">starkjfs.org</a> → Child Care Services</li>
+          <li><span class="ico">📋</span>Bring: proof of income, residency, birth certificates, work/school schedule</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Find a Provider</div>
+        <h3>Starting Point — Stark County Child Care Referrals</h3>
+        <p>Ohio's regional Child Care Resource & Referral agency for Stark County. Free help finding licensed providers that accept PFCC, plus quality ratings (Step Up to Quality stars).</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3308686333">(330) 868-6333</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.startingpoint.org" target="_blank">startingpoint.org</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAX HELP (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">💰 Free Tax Help — Alliance / Stark County</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Free Tax Prep — Seasonal</div>
+        <h3>United Way Stark County — Free Tax Prep</h3>
+        <p>VITA-style free tax preparation for low-to-moderate income filers across Stark County. Sites in Alliance and Canton, open during tax season (Jan–April). Will calculate your EITC and Child Tax Credit — usually the largest refund of the year for single parents.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>United Way Stark: <a href="tel:3304915567">(330) 491-5567</a></li>
+          <li><span class="ico">📞</span>Or dial <strong>2-1-1</strong> to find the closest open site</li>
+          <li><span class="ico">🌐</span><a href="https://uwstark.org" target="_blank">uwstark.org</a></li>
+          <li><span class="ico">🌐</span>DIY online: <a href="https://myfreetaxes.com" target="_blank">myfreetaxes.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHILDREN, CUSTODY & FAMILY LAW (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">👨‍👩‍👧 Child Services, Custody & Family Law — Alliance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Voluntary Family Support</div>
+        <h3>Stark County Children Services Division</h3>
+        <p>Beyond CPS, this division offers <strong>voluntary family support</strong> — parenting classes, in-home services, family preservation, and connections to early-childhood programs. <em>Asking for voluntary services is very different from being reported</em> — open with: <em>"I'm asking for voluntary family support services for my children."</em></p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>402 2nd St SE, Canton, OH 44702</li>
+          <li><span class="ico">📞</span>Main: <a href="tel:18002335437">1-800-233-KIDS</a> (5437) · Local: <a href="tel:3304555437">(330) 455-KIDS</a> (5437)</li>
+          <li><span class="ico">⏰</span>24 hours / 7 days for reports · Office Mon–Fri 8:30 AM – 4 PM</li>
+          <li><span class="ico">🌐</span><a href="https://starkjfs.org/government/offices/jobs___family_services/children_services/index.php" target="_blank">starkjfs.org/children_services</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Establish & Collect Child Support</div>
+        <h3>Stark County Child Support Enforcement Agency (CSEA)</h3>
+        <p>Free help establishing paternity and collecting child support — at no cost to you. They can locate the other parent, establish a court order, and collect payments through wage garnishment automatically. <strong>You do NOT need a lawyer.</strong> Even if the other parent is uninvolved, incarcerated, or in another state.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>221 3rd St SE, Canton, OH 44702</li>
+          <li><span class="ico">📞</span>Stark CSEA: <a href="tel:3304303800">(330) 430-3800</a></li>
+          <li><span class="ico">🌐</span><a href="https://childsupport.ohio.gov" target="_blank">childsupport.ohio.gov</a> (apply online)</li>
+          <li><span class="ico">💡</span>If on OWF, child support is usually automatic — but make sure they're collecting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Custody / Family Court Forms</div>
+        <h3>Stark County Family Court — Domestic Relations</h3>
+        <p>Handles all <strong>divorce, custody, visitation, child support, paternity, modifications, and domestic violence protection orders</strong> for Stark County. A free <strong>Family Court Help Desk</strong> can help you with self-representation forms if you can't afford an attorney.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>110 Central Plaza South, Suite 601, Canton, OH 44702</li>
+          <li><span class="ico">📞</span><a href="tel:3304517415">(330) 451-7415</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.starkcountyohio.gov/government/legal___judicial/family_court/" target="_blank">starkcountyohio.gov/family_court</a></li>
+          <li><span class="ico">🌐</span>Forms: <a href="https://www.starkcountyohio.gov/government/legal___judicial/family_court/resources/court_filing_forms.php" target="_blank">filing forms here</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Free Family Lawyer</div>
+        <h3>Community Legal Aid — Family Law (Canton)</h3>
+        <p>Free civil legal representation for low-income Stark County residents — including <strong>custody, divorce, visitation, child support, paternity, and protection orders</strong>. They actually represent you in court if you qualify (you do, with no income). Use the HelpLine to apply.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>401 Market Ave N, Suite 101, Canton, OH 44702</li>
+          <li><span class="ico">📞</span><a href="tel:18009989454"><strong>1-800-998-9454</strong></a> (HelpLine)</li>
+          <li><span class="ico">⏰</span>HelpLine: Mon & Wed 9 AM–Noon · Tue & Thu 1–4 PM</li>
+          <li><span class="ico">🌐</span><a href="https://www.communitylegalaid.org" target="_blank">communitylegalaid.org</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Visitation Self-Help</div>
+        <h3>Stark County Pro Se Visitation Clinic</h3>
+        <p>Free self-help clinic specifically for parents who want to modify visitation or custody orders without an attorney. They walk you through the paperwork and process step by step.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>50 South Main St, Akron, OH 44308</li>
+          <li><span class="ico">📞</span><a href="tel:3305354191">(330) 535-4191</a></li>
+          <li><span class="ico">💡</span>Best for: modifying an existing order, not starting a new case</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Custody + DV Combined</div>
+        <h3>Alliance Area DV Shelter — Legal Advocacy</h3>
+        <p>If domestic violence is part of your custody situation, the shelter's advocates help with <strong>civil protection orders, emergency custody, and divorce filings</strong> at no cost. They accompany you to court when needed. Often a faster, safer track than navigating family court alone.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>24-hr hotline: <a href="tel:3308237223"><strong>(330) 823-7223</strong></a></li>
+          <li><span class="ico">⚡</span>All advocacy is free, confidential, and you do not need a police report to qualify</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Free Legal Info Online</div>
+        <h3>Ohio Legal Help — DIY Family Law</h3>
+        <p>Free Ohio-specific legal info site. Walks you through custody, child support, divorce, and protection order forms step by step. Useful when you're prepping to call Legal Aid or filling forms at the Family Court Help Desk.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🌐</span><a href="https://www.ohiolegalhelp.org" target="_blank">ohiolegalhelp.org</a></li>
+          <li><span class="ico">💡</span>Free guided form generators for each county — Stark County included</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EARLY HEAD START + LIBRARY (ALLIANCE) -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🎓 Free Education & Family Programs — Alliance</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Free Childcare + Education</div>
+        <h3>SCCAA Head Start / Early Head Start — Stark County</h3>
+        <p>Free federal Head Start/EHS program serving Stark County. Early Head Start covers <strong>infants 6 weeks to 3 years</strong>. Includes child care, nutrition, health/dental, family services, and parent support. <strong>Both infants qualify and there is no cost.</strong></p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>1366 Market Ave N, Canton, OH 44714</li>
+          <li><span class="ico">📞</span><a href="tel:3304541676">(330) 454-1676</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.sccaa.org/wba/content/agency-programs/head-start/" target="_blank">sccaa.org/head-start</a></li>
+          <li><span class="ico">💡</span>Apply early — popular program, multiple Alliance-area sites</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Free Childcare Alternative</div>
+        <h3>YWCA Canton — Early Head Start</h3>
+        <p>Alternative Early Head Start provider for Stark County including Alliance. Currently enrolling children <strong>6 weeks to 3 years</strong>, including infants and toddlers with disabilities. Six child-care partner sites + two in-home family providers.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>YWCA Canton: <a href="tel:3304525138">(330) 452-5138</a></li>
+          <li><span class="ico">🌐</span><a href="https://ywcacanton.org/ywca-early-head-start" target="_blank">ywcacanton.org/early-head-start</a></li>
+          <li><span class="ico">⚡</span>Currently enrolling — call to confirm openings</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Free Internet + Resources</div>
+        <h3>Rodman Public Library — Alliance</h3>
+        <p><strong>Free Wi-Fi · free computers · free library card.</strong> Critical for online benefit applications, calling agencies in a quiet space, free children's programs, and printing documents. The main and branch libraries both offer Wi-Fi.</p>
+        <ul class="contact-list">
+          <li><span class="ico">🏢</span>Main: 215 E. Broadway St, Alliance, OH 44601</li>
+          <li><span class="ico">🏢</span>Branch: 1808 W. State St, Alliance</li>
+          <li><span class="ico">📞</span><a href="tel:3308212665">(330) 821-2665</a></li>
+          <li><span class="ico">⏰</span>Mon–Wed 10–8 · Thu–Fri 10–6 · Sat 10–4 · (Branch Sun 1–5 Oct–Apr)</li>
+          <li><span class="ico">🌐</span><a href="https://www.rodmanlibrary.com" target="_blank">rodmanlibrary.com</a></li>
+          <li><span class="ico">💡</span>Story time for babies/toddlers — free socialization AND a break for you</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TRANSPORTATION -->
+    <h3 style="font-size:1.1rem;color:var(--oh-accent);margin-bottom:16px;font-weight:600;">🚌 Transportation</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Public Bus</div>
+        <h3>SARTA — Stark Area Regional Transit Authority</h3>
+        <p>Stark County's public bus system. Serves Alliance, Canton, Massillon and the rest of the county. Children under 6 ride <strong>free</strong> with a paying adult. Stroller-friendly. SARTA's <strong>Fare Matching Program</strong> partners with local nonprofits so you may be able to get free passes through agencies you're already working with.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span><a href="tel:3304541080">(330) 454-1080</a></li>
+          <li><span class="ico">🌐</span><a href="https://www.sartaonline.com" target="_blank">sartaonline.com</a></li>
+          <li><span class="ico">💡</span>Stark JFS provides <strong>non-emergency medical transport</strong> via SARTA — call (330) 451-8957</li>
+          <li><span class="ico">💡</span>Ask Salvation Army, YWCA, or Alliance for Children if they have SARTA passes available</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: CHECKLISTS
+════════════════════════════════════════════ -->
+<div id="tab-checklist" class="tab-content" data-print-title="Action Checklists — Phase 1 through 4">
+  <div class="container">
+    <h2 class="section-title">Your Action Checklists</h2>
+    <p class="section-sub">Work through these in order. Each phase builds on the last. Check items off as you complete them — <strong>your progress is saved automatically</strong> on this device.</p>
+
+    <div class="progress-summary" role="status" aria-live="polite">
+      <div class="progress-text"><strong id="progressCount">0 of 0</strong> tasks complete · <span id="progressPct">0%</span></div>
+      <div class="progress-bar-wrap" aria-hidden="true"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <button class="progress-reset" onclick="resetChecklist()" type="button" title="Uncheck all items">Reset</button>
+    </div>
+
+    <div class="warn-box">
+      <h4>⚠️ Before You Start — Documents to Gather (Tap to Check Off)</h4>
+      <p style="margin-bottom:10px;">You'll need these for almost every application. Missing documents won't stop you from <em>applying</em>, but getting them speeds things up significantly.</p>
+      <ul class="checklist-items" id="docTracker" style="margin-top:8px;">
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Your photo ID</strong> — driver's license, state ID, or expired ID is OK to start
+            <span class="item-note">Need a new one? CA DMV (530) 893-9777 · OH BMV (844) 644-6268. Fee waivers available if you're on SNAP/Medicaid.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Your Social Security card</strong>
+            <span class="item-note">Lost? Order free at <a href="https://www.ssa.gov/myaccount/" target="_blank">ssa.gov/myaccount</a> or call (800) 772-1213. Most agencies accept the number alone temporarily.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Social Security cards for both infants</strong>
+            <span class="item-note">If they don't have SSNs yet, apply free at any SSA office or with their birth certificate. Required for tax credits (EITC/CTC).</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Birth certificates for both infants</strong>
+            <span class="item-note">Order from the state of birth. CA Vital Records (916) 445-2684 · OH Vital Statistics (614) 466-2531. Cost ~$25 each but most agencies accept a copy or even a delayed promise.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Proof of address</strong> — any utility bill, mail, lease, or shelter letter
+            <span class="item-note">If you're unhoused, a letter from a shelter or social worker counts. So does a written statement from someone you're staying with.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Bank account info</strong> (if you have an account)
+            <span class="item-note">Not required — benefits can come on an EBT card. But direct deposit is faster once you have an account.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Immunization records for both infants</strong>
+            <span class="item-note">CalWORKs requires up-to-date immunizations within 30 days of approval. Ask your WIC clinic or pediatrician for copies.</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Any recent pay stubs OR a written statement that you have no income</strong>
+            <span class="item-note">A self-declared "I have no income" letter is accepted in both states — write it, sign it, date it, keep a copy.</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="checklist-section">
+      <div class="checklist-header">
+        <div class="step-number urgent">1</div>
+        <div class="step-meta">
+          <h3>Phase 1 — Day 1 to Day 3: Immediate Survival</h3>
+          <span class="timeframe urgent">🔴 DO THIS TODAY / THIS WEEK</span>
+        </div>
+      </div>
+      <ul class="checklist-items" id="phase1">
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Call 211</strong> — describe your situation (single mom, two infants, no income). They will direct you to the fastest available help in your area.
+            <span class="item-note">CA: (800) 345-9491 | OH: Dial 2-1-1</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Secure emergency food immediately</strong> — Call your local food bank or food pantry. No appointment needed at most.
+            <span class="item-note">Chico: Chico Rescue Mission (530) 343-1935 (Tues 10am) | Alliance: Alliance Community Pantry (330) 680-8130</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>If you need shelter tonight</strong> — Call your city's shelter line immediately.
+            <span class="item-note">Chico: (530) 897-5890 | Alliance/Stark: (330) 452-4363 (Homeless Hotline)</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Apply for SNAP / CalFresh online or by phone</strong> — This starts the clock for backdating. The $785/month in food benefits is your highest-value immediate resource.
+            <span class="item-note">CA: BenefitsCAL.com or (877) 847-3663 | OH: benefits.ohio.gov or 1-844-640-6446</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Call WIC and schedule your appointment</strong> — You and both infants likely qualify. Infant formula through WIC alone can save $200–$400/month.
+            <span class="item-note">Chico WIC: (530) 552-4025 | Alliance WIC: (330) 821-3929</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>If infants have no doctor yet</strong> — Ask WIC to help you find a Medi-Cal or Medicaid pediatrician. They do this regularly.
+            <span class="item-note">Immunizations are required for CalWORKs within 30 days of approval</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>If you are in danger or fleeing abuse</strong> — Call the local DV shelter. Both have <em>FREE 24/7 shelter for women and children with no referral needed.</em>
+            <span class="item-note">Chico: Catalyst (800) 895-8476 · Alliance: Alliance Area DV Shelter (330) 823-7223 · National: 1-800-799-7233</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>If you're struggling emotionally</strong> — Postpartum depression and anxiety are common (1 in 7 moms) and treatable. Reaching out early matters.
+            <span class="item-note">Call/text 1-833-852-6262 (maternal mental health) · PSI helpline: 1-800-944-4773 · Local: NVCSS (530) 241-0552 (Chico) · CommQuest (330) 821-8407 (Alliance)</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PHASE 2 -->
+    <div class="checklist-section">
+      <div class="checklist-header">
+        <div class="step-number soon">2</div>
+        <div class="step-meta">
+          <h3>Phase 2 — Week 1 to Week 2: Benefits Applications</h3>
+          <span class="timeframe soon">🟡 WITHIN THE FIRST 2 WEEKS</span>
+        </div>
+      </div>
+      <ul class="checklist-items" id="phase2">
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Apply for CalWORKs / Ohio Works First (TANF)</strong> — Cash aid + automatic Medicaid enrollment. This is your most important in-person or phone call.
+            <span class="item-note">Chico DESS: (877) 410-8803 | Stark JFS: (330) 452-4661 or 1-844-640-6446</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Ask for Expedited Benefits</strong> — When applying, specifically say "I have two infants and zero income — do I qualify for expedited benefits?" This unlocks 3-day SNAP and faster processing.
+            <span class="item-note">This single question can change your approval timeline from 30 days to 3 days</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Confirm Medicaid / Medi-Cal enrollment for infants</strong> — Both infants should be enrolled immediately. If you don't receive confirmation within 5 days of applying, call and ask specifically about infant enrollment.
+            <span class="item-note">CA: (877) 847-3663 | OH: (330) 452-4661</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Apply for Housing Assistance / get on the Section 8 waitlist</strong> — The waitlist is long, but the clock only starts when you apply. Do it now even if you have housing.
+            <span class="item-note">CA: Housing Authority of Butte County (530) 895-4474 | OH: SMHA (330) 454-8051</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Apply for LIHEAP / HEAP energy assistance</strong> — Especially important with infants who need consistent temperature. Ask about current enrollment dates.
+            <span class="item-note">CA: (530) 345-9491 (Butte CAA) | OH: SCCAA (330) 454-1676</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Apply for free/low-cost phone service</strong> — You need a phone to manage all these programs and handle emergencies with infants.
+            <span class="item-note">CA: California LifeLine (866) 272-0349 | OH: Lifeline (federal) through any carrier</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Get free diapers this week</strong> — Diapers are NOT covered by SNAP or WIC. Plan ahead.
+            <span class="item-note">Chico: call 211 to find current pantry distributions · Alliance: Salvation Army (330) 823-5188 M–F 10–2 or Alliance Commons (330) 829-8183 M–Th 10–noon</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Get both infants properly fitted car seats</strong> — Free programs in both areas. Required by law and a common reason families lose custody if cited.
+            <span class="item-note">Chico: Butte Co Car Seat Program 1-800-339-2941 or CHP Wed 8:30–11:30 at 413 Southgate · Alliance: Stark Co Health (330) 493-4562, ask about Ohio Buckles Buckeyes</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Ask your caseworker for a bus pass</strong> — Welfare-to-Work and Medicaid Non-Emergency Medical Transport (NEMT) cover transit to appointments.
+            <span class="item-note">Chico: B-Line blinetransit.com | Alliance: SARTA sartaonline.com · Stark JFS NEMT: (330) 451-8957</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PHASE 3 -->
+    <div class="checklist-section">
+      <div class="checklist-header">
+        <div class="step-number medium">3</div>
+        <div class="step-meta">
+          <h3>Phase 3 — Month 1 to Month 2: Stability</h3>
+          <span class="timeframe medium">🔵 WITHIN THE FIRST 2 MONTHS</span>
+        </div>
+      </div>
+      <ul class="checklist-items">
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Attend your CalWORKs / OWF orientation</strong> — Required to keep benefits. This is also where you find out about childcare subsidies, job training, and transportation help.
+            <span class="item-note">Missing this can pause your benefits — prioritize it</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Ask your caseworker about childcare subsidies</strong> — Even though you're not working yet, subsidized childcare may be available to allow you to attend training or job search activities.
+            <span class="item-note">In CA: CalWORKs childcare (ask for CCP1 form). In OH: Publicly Funded Child Care through JFS</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Get infants established with a pediatrician</strong> — Both need regular well-baby visits. Medi-Cal/Medicaid covers 100% of this.
+            <span class="item-note">CA: (877) 847-3663 to find a Medi-Cal provider | OH: Contact Ohio Medicaid at (800) 324-8680</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Contact NVCSS (Chico) or YWCA/Alliance for Children (Alliance) about transitional housing</strong> — Even if you have somewhere to stay, explore your longer-term options now.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Open a free checking account</strong> — Many benefit programs (including SNAP EBT) come with a card, but having a bank account helps with stability. Many credit unions offer free accounts with no minimum balance.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Look into child support establishment</strong> — Even if the father is uninvolved, the state can help establish paternity and collect child support on your behalf — at no cost to you.
+            <span class="item-note">CA: CA Dept of Child Support Services (866) 901-3212 | OH: Stark County Child Support (330) 430-3800</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PHASE 4 -->
+    <div class="checklist-section">
+      <div class="checklist-header">
+        <div class="step-number long">4</div>
+        <div class="step-meta">
+          <h3>Phase 4 — Month 3 and Beyond: Building Forward</h3>
+          <span class="timeframe long">🟢 ONGOING / LONG-TERM</span>
+        </div>
+      </div>
+      <ul class="checklist-items">
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Enroll in a job training or education program</strong> — Both CalWORKs and OWF include pathways to vocational training, GED programs, and job placement support at no cost.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Re-certify your benefits on time</strong> — SNAP/CalFresh, CalWORKs, and Medicaid all require periodic recertification. Missing the deadline can interrupt benefits — track your renewal dates.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Look into Head Start / Early Head Start when infants turn 3</strong> — Free early childhood education. Start the application early; waitlists can be 6–12 months.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Explore NVCSS financial literacy or YWCA financial coaching</strong> — Free one-on-one financial coaching is available for housing residents and sometimes community members. Build a budget now, even a simple one.
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>File taxes every January–April — even with no income</strong> — Single parents with kids typically get back $4,000–$7,000+ in EITC and Child Tax Credit. Free filing via VITA in-person or MyFreeTaxes.com online.
+            <span class="item-note">Chico VITA: 780 Mangrove Ave, T/Th 9–5 (tax season) · Alliance: dial 2-1-1 to find nearest site · Online: myfreetaxes.com</span>
+          </label>
+        </li>
+        <li class="checklist-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label><strong>Re-verify safety plan periodically</strong> — If you're with a partner whose behavior worsens, save the DV hotline in your phone under a neutral name (e.g., "Sarah") and keep $20, a phone, ID, and birth certificates in a hidden go-bag.
+            <span class="item-note">Catalyst (CA) 1-800-895-8476 · Alliance DV (OH) (330) 823-7223 · National 1-800-799-7233 · Text START to 88788</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: WAIT TIMES
+════════════════════════════════════════════ -->
+<div id="tab-waittimes" class="tab-content" data-print-title="Realistic Wait Times by Program">
+  <div class="container">
+    <h2 class="section-title">Realistic Wait Times</h2>
+    <p class="section-sub">Based on real-world program data as of 2025–2026. These are honest estimates — not best-case scenarios.</p>
+
+    <h3 style="font-size:1rem;color:var(--ca-accent);margin-bottom:12px;font-weight:600;">📍 Chico, CA (Butte County)</h3>
+    <table class="wait-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Typical Wait</th>
+          <th>Expedited Option?</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CalFresh / SNAP</strong></td>
+          <td class="fast">3–7 days (expedited)</td>
+          <td>✅ Yes — ask for it</td>
+          <td>Zero income with infants almost always qualifies for expedited</td>
+        </tr>
+        <tr>
+          <td><strong>CalWORKs Cash Aid</strong></td>
+          <td class="medium">7–30 days</td>
+          <td>⚠️ Limited</td>
+          <td>Backdated to application date. Average is 10–15 business days in Butte.</td>
+        </tr>
+        <tr>
+          <td><strong>Medi-Cal (Infants)</strong></td>
+          <td class="fast">Same day–3 days</td>
+          <td>✅ Yes — infant priority</td>
+          <td>Infants under 1 are priority. Effective same day of application in many cases.</td>
+        </tr>
+        <tr>
+          <td><strong>WIC</strong></td>
+          <td class="fast">3–7 days</td>
+          <td>✅ Usually available same week</td>
+          <td>Call (530) 552-4025 — appointments often within a week</td>
+        </tr>
+        <tr>
+          <td><strong>LIHEAP Energy Assistance</strong></td>
+          <td class="medium">1–4 weeks</td>
+          <td>⚠️ Seasonal — apply when open</td>
+          <td>Season Oct–Sept. Apply early — funds run out.</td>
+        </tr>
+        <tr>
+          <td><strong>Section 8 / Housing Voucher</strong></td>
+          <td class="slow">1–3 years</td>
+          <td>❌ No</td>
+          <td>Apply immediately. Families with infants get priority points, but waitlists are real.</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency Shelter</strong></td>
+          <td class="medium">Same day–3 days</td>
+          <td>✅ Call (530) 897-5890</td>
+          <td>Availability varies daily. Women with infants are highest priority. Call early in the day.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem;color:var(--oh-accent);margin-bottom:12px;font-weight:600;">📍 Alliance, OH (Stark County)</h3>
+    <table class="wait-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Typical Wait</th>
+          <th>Expedited Option?</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SNAP Food Assistance</strong></td>
+          <td class="fast">3–7 days (expedited)</td>
+          <td>✅ Yes — ask for it</td>
+          <td>Same federal rules as CA. Zero income qualifies for expedited processing.</td>
+        </tr>
+        <tr>
+          <td><strong>Ohio Works First (TANF Cash)</strong></td>
+          <td class="medium">10–30 days</td>
+          <td>⚠️ Limited</td>
+          <td>Benefits backdated to application date. Keep copies of everything you submit.</td>
+        </tr>
+        <tr>
+          <td><strong>Ohio Medicaid (Infants)</strong></td>
+          <td class="fast">Same day–5 days</td>
+          <td>✅ Yes — infant priority</td>
+          <td>Apply at Stark JFS. Infants can be enrolled almost immediately.</td>
+        </tr>
+        <tr>
+          <td><strong>WIC (Alliance City HD)</strong></td>
+          <td class="fast">3–10 days</td>
+          <td>✅ Usually quick</td>
+          <td>Call (330) 821-3929. Alliance residents have a dedicated office.</td>
+        </tr>
+        <tr>
+          <td><strong>HEAP Energy Assistance</strong></td>
+          <td class="medium">1–3 weeks</td>
+          <td>⚠️ Seasonal</td>
+          <td>Apply through SCCAA. Season-limited — apply as soon as open.</td>
+        </tr>
+        <tr>
+          <td><strong>Section 8 / SMHA Voucher</strong></td>
+          <td class="slow">1–3+ years</td>
+          <td>❌ No</td>
+          <td>Apply immediately at SMHA (330) 454-8051. Waitlist is long but starts upon application.</td>
+        </tr>
+        <tr>
+          <td><strong>Alliance for Children PSH</strong></td>
+          <td class="medium">2–8 weeks</td>
+          <td>⚠️ Call hotline first</td>
+          <td>12-unit program — limited spots. Call Homeless Hotline (330) 452-4363 to pre-screen.</td>
+        </tr>
+        <tr>
+          <td><strong>YWCA Transitional Housing</strong></td>
+          <td class="medium">1–4 weeks</td>
+          <td>✅ Call to inquire</td>
+          <td>Contact YWCA Alliance at (330) 823-1840. Intake can sometimes be done by phone.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h4>⏱️ Counselor's Honest Assessment on Wait Times</h4>
+      <ul>
+        <li>Cash aid (CalWORKs / OWF) is where delays hurt most. Prepare to go 2–4 weeks without it. This is why getting food (SNAP/WIC) fast and food bank access is critical — it reduces cash pressure.</li>
+        <li>SNAP food benefits backdated to your application date means applying online TODAY and getting approved in week 2 still gives you the full month's benefits. Start the clock immediately.</li>
+        <li>Medicaid for infants is the fastest program in both states. If your infants have no insurance right now, this is your Day 1 priority call.</li>
+        <li>Section 8 housing vouchers are a long game — 1 to 3 years is real. Apply today so you're in the queue. Pursue transitional housing (YWCA, Alliance for Children) for the near term.</li>
+        <li>Always follow up after 10 business days if you haven't heard anything. Ask for your caseworker's direct number. Write down every date and who you spoke with.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB: TIPS
+════════════════════════════════════════════ -->
+<div id="tab-tips" class="tab-content" data-print-title="Counselor Tips & Insider Guidance">
+  <div class="container">
+    <h2 class="section-title">Counselor's Tips & Insider Guidance</h2>
+    <p class="section-sub">Hard-won practical advice to help you navigate the system faster and avoid common mistakes.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <h3>📋 The "One Application Unlocks Everything" Strategy</h3>
+        <p>In both CA and OH, applying for CalWORKs / Ohio Works First at your county office submits you for cash, food (SNAP), and Medicaid in ONE application. Don't make separate trips. One form, one appointment, three programs. Always say <em>"I want to apply for all available assistance."</em></p>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <h3>🗓️ Backdate Strategy — The Clock Matters</h3>
+        <p>Both SNAP and CalWORKs benefits are backdated to the date you applied, not the date you were approved. Apply online or by phone TODAY, even if your appointment isn't for two weeks. This could mean an extra $800–$1,000 in food benefits you won't lose to processing delays.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <h3>👶 "Two Infants" Is Your Golden Key</h3>
+        <p>Every time you call an agency, lead with: <em>"I am a single mother with two infants and no income."</em> This is not manipulation — it is accurate information that triggers priority processing in almost every program. Infants with no healthcare, no formula, no heat are a documented emergency in every state system.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <h3>📁 Build a "Benefits Binder" on Day 1</h3>
+        <p>Get a $1 folder or accordion file. Keep every paper you get: every Notice of Action, every approval letter, every case number. Write down every phone call with date, time, and name of person. This protects you if benefits are wrongly cut and makes appeals much easier.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <h3>🏠 CA-Specific: Housing Authority Drop Box</h3>
+        <p>The Housing Authority of Butte County has a 24/7 drop box at their office. You can submit your housing application any hour, any day, without waiting for office hours. This means you can apply for Section 8 this evening. The timestamp matters for waitlist position.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <h3>🏠 OH-Specific: Call the 2-1-1 First in Alliance</h3>
+        <p>Dialing 2-1-1 in Stark County connects you to United Way's Help Central, which has a live database of what's available right now — including emergency food, clothing, and shelter beds. It's free, 24/7, and much faster than calling individual agencies cold.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <h3>💊 WIC Formula = Real Money</h3>
+        <p>Infant formula costs $200–$400/month per infant at retail. WIC provides this for free. For two infants, that can be $400–$800/month in formula alone — on top of other WIC foods. This is often MORE valuable than the initial cash aid payment. Get this appointment on the calendar first.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <h3>⚡ Expedited SNAP — Ask the Magic Words</h3>
+        <p>When applying for SNAP/CalFresh, say: <em>"I have no income, two infants, and cannot wait 30 days. Do I qualify for expedited processing?"</em> Federal law requires states to process expedited SNAP within 7 days (and often 3). You almost certainly qualify. Workers don't always offer this proactively — you must ask.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <h3>🚨 What To Do If Benefits Are Delayed or Wrongly Denied</h3>
+        <p>You have the right to a fair hearing in both states. If your application is denied or delayed past 30 days, request a "fair hearing" or "appeal" in writing. In CA, Legal Services of Northern California (Chico: 541 Normal Ave) provides free help. In OH, call Ohio Legal Help at (844) 894-4529 or contact ICAN (330) 455-9100 in Canton.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <h3>👩‍⚕️ Mental Health Support — Use It</h3>
+        <p>Both areas have free mental health services for parents. In Chico, NVCSS offers free counseling (530) 241-0552. In Alliance, CommQuest provides mental health services at 1207 West State St, Suite M, (330) 821-8407. Raising two infants alone under financial stress is incredibly hard. This resource exists for exactly your situation.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;">📞 What to Actually SAY — Phone Call Scripts</h2>
+    <p class="section-sub">The biggest reason people abandon applications: not knowing what to say. Use these exact scripts. Read them off your phone if you need to. <strong>Saying these specific phrases triggers priority processing in most systems.</strong></p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Script 1 — Opening Line</div>
+        <h3>Calling 211 / the benefits office</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--teal);">
+        "Hi, my name is [your name]. I'm a single mother of two infants, one that's under 1 year old and a 2 year old. I have no income and I'm applying for all available assistance. Can you help me start an application and tell me what I qualify for?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">💡</span>Saying <strong>"two infants"</strong> + <strong>"no income"</strong> in your first sentence triggers priority handling</li>
+          <li><span class="ico">💡</span>Saying <strong>"all available assistance"</strong> opens every program in one application</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Script 2 — Magic Words for SNAP</div>
+        <h3>Asking for expedited food benefits</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--gold);">
+        "I have no income and less than $100 in my bank account. I have two infants, one under 1 year old and a 2 year old, who need to eat. <strong>Do I qualify for expedited SNAP processing?</strong> Federal law requires 7 days for expedited cases."
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>Workers don't always offer expedited proactively — you must ask</li>
+          <li><span class="ico">⚡</span>This drops SNAP approval from 30 days to <strong>3–7 days</strong></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Script 3 — Day-1 Medical for Infants</div>
+        <h3>Getting Medicaid for the infants TODAY</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--teal);">
+        "I'm a single mother of two infants — one under 1 year old and a 2 year old — and they have no health insurance. I need to enroll them in Medi-Cal/Medicaid today. Children under 1 are a priority — can you enroll them same-day?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>Infants <1 are highest priority — same-day enrollment is standard</li>
+          <li><span class="ico">⚡</span>Get the case number / member ID before you hang up</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Script 4 — Shelter Tonight</div>
+        <h3>Calling the shelter hotline</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--sage);">
+        "I'm calling because I need shelter tonight. I'm a single mother with two infants — one under 1 year old and a 2 year old. I have no safe place to stay. What family shelters have openings or what's the assessment process?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>Stay on the line until they tell you a next step — never accept "we'll call you back"</li>
+          <li><span class="ico">⚡</span>If unsafe due to abuse, mention it — DV shelters often have openings when general shelters don't</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Script 5 — Following Up on Delay</div>
+        <h3>It's been 30+ days, no answer</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--ca-accent);">
+        "I applied on [date] for [program]. It has been more than [30/45] days. Federal regulations require a decision within that timeframe. I need to speak to a supervisor about my application. Can you also tell me how to request a Fair Hearing?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>Mentioning "Fair Hearing" almost always escalates your case immediately</li>
+          <li><span class="ico">⚡</span>Write down: date, time, name of person you spoke with, what they said</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Script 6 — After a Denial</div>
+        <h3>Requesting a Fair / State Hearing</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--oh-accent);">
+        "I received a denial notice dated [date] for [program]. I want to request a [Fair Hearing in CA / State Hearing in OH]. I also want to apply for 'aid paid pending' so my benefits continue during the appeal. How do I file this in writing?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>You have <strong>90 days</strong> from the denial date — but file within <strong>10 days</strong> to keep aid pending</li>
+          <li><span class="ico">⚡</span>LSNC (Chico) or Community Legal Aid (Canton) will help you for free</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Script 7 — DV Shelter</div>
+        <h3>Calling the domestic violence hotline</h3>
+        <p style="background:var(--cream);padding:12px 14px;border-radius:6px;font-style:italic;color:var(--text);border-left:3px solid var(--rose);">
+        "I need shelter for myself and my two infants — one under 1 year old and a 2 year old. I'm in [city]. I need [tonight / this week]. I'm calling from a [safe / unsafe] location. Can you tell me what space is available and how to get there safely?"
+        </p>
+        <ul class="contact-list" style="margin-top:8px;">
+          <li><span class="ico">⚡</span>You do <strong>NOT</strong> have to file a police report to enter a DV shelter</li>
+          <li><span class="ico">⚡</span>You do <strong>NOT</strong> have to be physically injured — emotional/financial abuse counts</li>
+          <li><span class="ico">⚡</span>Your location and contact will stay confidential — they will not call your partner</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Universal Tips</div>
+        <h3>While you're on the call — always ask</h3>
+        <p>Before you hang up, get these 5 things in writing or repeated back to you:</p>
+        <ol style="padding-left:20px;font-size:.88rem;color:var(--text-mid);margin-top:6px;line-height:1.7;">
+          <li><strong>Case number / confirmation number</strong> — your unique reference</li>
+          <li><strong>Caseworker's name and direct line</strong> — so you can follow up</li>
+          <li><strong>What's the next step?</strong> — appointment, paperwork, etc.</li>
+          <li><strong>When will I hear back?</strong> — get a specific date</li>
+          <li><strong>What documents do you still need from me?</strong> — list them now</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;">🎯 Building Forward — Job Training & Self-Sufficiency Paths</h2>
+    <p class="section-sub">CalWORKs and Ohio Works First aren't just cash aid — they're gateways to free training, GED, college, and paid work activities. You don't have to figure this out alone.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">CA — Welfare-to-Work</div>
+        <h3>CalWORKs Welfare-to-Work (WTW)</h3>
+        <p>As a CalWORKs recipient, you get <strong>free job training, education, GED prep, vocational school, and even community college support</strong> — plus subsidized childcare during all activities and bus passes. Infants under 24 months can earn you a temporary exemption from the work requirement while still keeping cash aid. Use that time to plan.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Butte DESS: <a href="tel:18774108803">1-877-410-8803</a> — ask for your <strong>WTW worker</strong></li>
+          <li><span class="ico">💡</span>Butte College has CalWORKs students supported through their EOPS office: <a href="tel:5308952931">(530) 895-2931</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">OH — OWF Work Activities</div>
+        <h3>Ohio Works First — Self-Sufficiency Plan</h3>
+        <p>OWF requires "work activities" but those include <strong>job search, GED, vocational training, community college, and on-the-job training</strong> — all subsidized. Stark JFS will pair you with a case manager who can help build a Self-Sufficiency Contract that fits with caring for infants. Tell them up front you need childcare to participate.</p>
+        <ul class="contact-list">
+          <li><span class="ico">📞</span>Stark JFS: <a href="tel:3304524661">(330) 452-4661</a> — ask for your <strong>SSP case manager</strong></li>
+          <li><span class="ico">💡</span>Stark State College has childcare on campus + financial aid help for OWF/PFCC recipients</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;">🚧 When Things Go Wrong — Troubleshooting</h2>
+    <p class="section-sub">Real problems you may face — and exactly what to do.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">Denial</div>
+        <h3>"My application was denied"</h3>
+        <p>You have <strong>90 days</strong> to request a Fair Hearing (CA) or State Hearing (OH) — file it in writing. <em>Even if you think the denial is correct, request the hearing</em> — many denials get overturned. Get the denial letter, write "I request a fair hearing on [date of denial letter]" + your name and case number, and mail/email/hand-deliver it. Legal aid (LSNC in Chico, Community Legal Aid in Canton) will help you for free.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Delay</div>
+        <h3>"It's been 30+ days, no answer"</h3>
+        <p>SNAP must be decided within 30 days (7 days expedited). CalWORKs/OWF within 45 days. <strong>Past those deadlines, you have a right to your benefits.</strong> Call your caseworker. If they don't respond within 48 hours, ask for a supervisor. Still nothing? File a fair hearing request — that always triggers movement. Document every call with date/time/name.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent sage"></div>
+        <div class="card-label sage">Lost / Stolen</div>
+        <h3>"My EBT card was lost or stolen"</h3>
+        <p>Call <strong>1-877-328-9677</strong> (EBT customer service, both states) IMMEDIATELY to freeze and replace it. Replacement takes 5–7 business days. <strong>Federal law now requires states to replace stolen EBT benefits</strong> — ask your county worker to file the theft claim. Report the theft to police for the report number.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-label teal">Missed Appointment</div>
+        <h3>"I missed my CalWORKs / OWF appointment"</h3>
+        <p>Call your caseworker <strong>that same day</strong> and ask to reschedule. Most counties allow one missed appointment if you call. If your benefits were already cut, you have 90 days to request a fair hearing — and benefits can be restored to the date they were stopped if you reapply within 30 days.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent ca"></div>
+        <div class="card-label ca">Wrong Amount</div>
+        <h3>"My benefits dropped without warning"</h3>
+        <p>You should have received a <strong>Notice of Action (NOA)</strong> at least 10 days before any reduction. If you didn't get one, the cut is procedurally improper. Request a fair hearing within 10 days for "aid paid pending" — your old amount continues during the appeal. If you got the NOA but disagree, you still have 90 days to appeal.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent oh"></div>
+        <div class="card-label oh">Eviction</div>
+        <h3>"I got a 3-day or eviction notice"</h3>
+        <p>Don't ignore it. <strong>Call legal aid immediately</strong> (LSNC for CA, Community Legal Aid for OH). They handle eviction defense for free. You may qualify for emergency rental assistance (CalWORKs Homeless Assistance in CA, PRC funds in OH) — ask your benefits caseworker. Apply to the shelter line same day as a backup.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent gold"></div>
+        <div class="card-label gold">Caseworker Issue</div>
+        <h3>"My caseworker is unreachable / rude"</h3>
+        <p>Ask for the <strong>supervisor</strong> by name. If unsatisfied, file a written complaint with the county welfare director. In CA, you can also call the state ombudsman: <strong>1-866-613-3777</strong>. In OH, contact Ohio Department of Job and Family Services Family Stability Unit: <strong>1-866-244-0071</strong>. Always document who, what, when.</p>
+      </div>
+      <div class="card">
+        <div class="card-accent rose"></div>
+        <div class="card-label rose">No ID</div>
+        <h3>"I have no ID, no birth cert, no SSN card"</h3>
+        <p>You can still apply — agencies cannot deny benefits just for missing documents. They'll give you a "verification needed" letter. To get the documents free: <strong>SSA</strong> (800) 772-1213 for SSN cards · <strong>State Vital Records</strong> for birth certs (CA: 916-445-2684 / OH: 614-466-2531) · <strong>DMV/BMV</strong> with fee waiver if on benefits. LSNC and Community Legal Aid can help if there's a complication.</p>
+      </div>
+    </div>
+
+    <div class="tip-box" style="margin-top:16px;">
+      <h4>📞 Your Two Most Important Phone Numbers</h4>
+      <ul>
+        <li><strong>If you're in Chico, CA:</strong> Butte County DESS — <strong>1-877-410-8803</strong>. This one number connects you to CalWORKs, CalFresh, Medi-Cal, and housing assistance.</li>
+        <li><strong>If you're in Alliance, OH:</strong> Stark County JFS — <strong>(330) 452-4661</strong> or statewide <strong>1-844-640-6446</strong>. This connects you to OWF/TANF, SNAP, Medicaid, and childcare.</li>
+        <li><strong>Both locations:</strong> Dial <strong>2-1-1</strong> at any time, 24 hours a day. This is the fastest way to find what's open right now, today.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Single Mother Resource Guide</strong> — Chico, CA & Alliance, OH<br>
+  Research compiled May 2026 from official county, state, and nonprofit sources.<br>
+  Contact information verified against agency websites. Programs and availability may change — always call to confirm.<br>
+  <em>This guide is for informational purposes. It does not replace advice from a licensed social worker or benefits specialist.</em><br>
+  <span style="font-size:.74rem;opacity:.7;display:inline-block;margin-top:8px;">Last opened: <span id="lastOpened">—</span> · Works offline once loaded · Print-friendly · Saves your progress locally</span>
+</div>
+
+<div class="action-bar" role="toolbar" aria-label="View options">
+  <button class="action-btn" id="helpBtn" onclick="toggleHelp()" title="Show keyboard shortcuts" aria-label="Show keyboard shortcuts">?</button>
+  <button class="action-btn" id="darkToggle" onclick="toggleDark()" title="Toggle dark mode (D)" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+  <button class="action-btn" id="fontToggle" onclick="cycleFontSize()" title="Change text size" aria-label="Change text size">A+</button>
+  <button class="action-btn" id="printBtn" onclick="printGuide()" title="Print entire guide" aria-label="Print guide">🖨️</button>
+  <button class="action-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Back to top">↑</button>
+</div>
+
+<div class="help-modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+  <div class="help-card">
+    <button class="help-close" onclick="toggleHelp()" aria-label="Close">✕</button>
+    <h3 id="helpTitle">Quick Tips & Keyboard Shortcuts</h3>
+    <dl>
+      <dt><kbd>/</kbd></dt><dd>Jump to search</dd>
+      <dt><kbd>D</kbd></dt><dd>Toggle dark mode</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Clear search</dd>
+      <dt><kbd>Ctrl/Cmd</kbd>+<kbd>P</kbd></dt><dd>Print (reveals all tabs)</dd>
+    </dl>
+    <h4>Tips</h4>
+    <ul>
+      <li><strong>Click any phone number</strong> to call. Click the small ⧉ to copy it.</li>
+      <li><strong>Map links</strong> appear next to street addresses — they open in Google Maps.</li>
+      <li><strong>Checklist progress saves automatically</strong> on this device. Clear browser data will reset it.</li>
+      <li><strong>Works offline</strong> once the page is loaded — useful if your data plan is limited.</li>
+      <li><strong>Search</strong> across all tabs at once — try "shelter", "formula", "diapers".</li>
+      <li><strong>Print</strong> creates a clean, full-guide PDF when you select "Save as PDF".</li>
+    </ul>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // ── TAB NAVIGATION ─────────────────────────────────
+  function showTab(id, evt) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    const panel = document.getElementById('tab-' + id);
+    if (panel) panel.classList.add('active');
+    if (evt && evt.target) {
+      evt.target.classList.add('active');
+      evt.target.setAttribute('aria-selected', 'true');
+    } else {
+      const btn = document.querySelector('.tab-btn[aria-controls="tab-' + id + '"]');
+      if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected', 'true'); }
+    }
+    try { sessionStorage.setItem('activeTab', id); } catch(e){}
+    // Clear search when switching tabs so resources are visible again
+    const search = document.getElementById('globalSearch');
+    if (search && search.value) { search.value = ''; runSearch(''); }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // ── HELP MODAL ─────────────────────────────────────
+  function toggleHelp() {
+    const m = document.getElementById('helpModal');
+    if (!m) return;
+    const showing = m.hidden;
+    m.hidden = !showing;
+    if (showing) {
+      const close = m.querySelector('.help-close');
+      if (close) close.focus();
+    } else {
+      const btn = document.getElementById('helpBtn');
+      if (btn) btn.focus();
+    }
+  }
+
+  // ── CHECKLIST WITH LOCALSTORAGE ────────────────────
+  const CHECKLIST_KEY = 'smrg_checklist_v1';
+  function getChecklistState() {
+    try { return JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}'); } catch(e) { return {}; }
+  }
+  function setChecklistState(state) {
+    try { localStorage.setItem(CHECKLIST_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+  function checklistKeyFor(item) {
+    // Use first 80 chars of label text as a stable key
+    const lbl = item.querySelector('label');
+    return lbl ? (lbl.textContent || '').trim().slice(0, 80) : '';
+  }
+  function toggleCheck(item) {
+    // Only toggle if the click target wasn't already the checkbox (it has its own change handler)
+    if (event && (event.target.tagName === 'INPUT' || event.target.tagName === 'A')) return;
+    const cb = item.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    cb.dispatchEvent(new Event('change', {bubbles: true}));
+  }
+  function updateProgress() {
+    const items = document.querySelectorAll('.checklist-item');
+    const checked = document.querySelectorAll('.checklist-item.checked').length;
+    const total = items.length;
+    const pct = total ? Math.round(checked / total * 100) : 0;
+    const c = document.getElementById('progressCount');
+    const p = document.getElementById('progressPct');
+    const b = document.getElementById('progressBar');
+    if (c) c.textContent = checked + ' of ' + total;
+    if (p) p.textContent = pct + '%';
+    if (b) b.style.width = pct + '%';
+  }
+  function resetChecklist() {
+    if (!confirm('Uncheck all items? This will clear your saved progress.')) return;
+    document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+      cb.checked = false;
+      cb.closest('.checklist-item').classList.remove('checked');
+    });
+    setChecklistState({});
+    updateProgress();
+    toast('Progress reset');
+  }
+  function restoreChecklist() {
+    const state = getChecklistState();
+    document.querySelectorAll('.checklist-item').forEach(item => {
+      const key = checklistKeyFor(item);
+      if (state[key]) {
+        const cb = item.querySelector('input[type="checkbox"]');
+        cb.checked = true;
+        item.classList.add('checked');
+      }
+    });
+    updateProgress();
+  }
+  document.querySelectorAll('.checklist-item input').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const item = this.closest('.checklist-item');
+      item.classList.toggle('checked', this.checked);
+      const state = getChecklistState();
+      const key = checklistKeyFor(item);
+      if (this.checked) state[key] = 1; else delete state[key];
+      setChecklistState(state);
+      updateProgress();
+    });
+  });
+
+  // ── COPY-TO-CLIPBOARD FOR PHONE NUMBERS ────────────
+  function injectCopyButtons() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+      if (a.nextElementSibling && a.nextElementSibling.classList && a.nextElementSibling.classList.contains('copy-btn')) return;
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Copy phone number');
+      btn.title = 'Copy ' + (a.textContent || '').trim();
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const num = (a.getAttribute('href') || '').replace('tel:', '');
+        copyText(num);
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 1400);
+      });
+      a.insertAdjacentElement('afterend', btn);
+    });
+  }
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(() => toast('Copied: ' + t)).catch(() => fallbackCopy(t));
+    } else { fallbackCopy(t); }
+  }
+  function fallbackCopy(t) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); toast('Copied: ' + t); } catch(e) { toast('Could not copy'); }
+    document.body.removeChild(ta);
+  }
+
+  // ── MAP LINKS FOR ADDRESSES ────────────────────────
+  // Detects list items whose icon is the building emoji (🏢 or 📍) and adds a Maps link
+  function injectMapLinks() {
+    document.querySelectorAll('.contact-list li').forEach(li => {
+      const ico = li.querySelector('.ico');
+      if (!ico) return;
+      const icoText = ico.textContent.trim();
+      if (icoText !== '🏢' && icoText !== '📍') return;
+      const textWrap = li.querySelector('div');
+      if (!textWrap) return;
+      // Skip if already has map link
+      if (textWrap.querySelector('.map-link')) return;
+      // Extract address text — last text node typically has the street address
+      const raw = (textWrap.textContent || '').trim();
+      // Heuristic: must contain a digit (street number) and a comma
+      if (!/\d/.test(raw) || !/,/.test(raw)) return;
+      // Take from first digit onward (skips "Butte County DESS" prefix)
+      const match = raw.match(/(\d[^\n]+?(?:CA|OH|California|Ohio)\s*\d*)/);
+      const addr = match ? match[1] : raw;
+      const link = document.createElement('a');
+      link.className = 'map-link';
+      link.href = 'https://www.google.com/maps/search/' + encodeURIComponent(addr);
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.setAttribute('aria-label', 'Open in Google Maps: ' + addr);
+      textWrap.appendChild(document.createTextNode(' '));
+      textWrap.appendChild(link);
+    });
+  }
+
+  // ── SEARCH / FILTER ────────────────────────────────
+  const SEARCH_SELECTOR = '.card, .checklist-item, .tip-box, .warn-box, .emergency-panel, .wallet-card, .estimator .est-col, .wait-table tbody tr';
+  function runSearch(q) {
+    q = (q || '').toLowerCase().trim();
+    const clear = document.getElementById('searchClear');
+    const meta = document.getElementById('searchMeta');
+    if (!q) {
+      document.querySelectorAll(SEARCH_SELECTOR).forEach(el => {
+        el.classList.remove('search-hidden', 'search-match');
+      });
+      clear && clear.classList.remove('visible');
+      meta && (meta.textContent = '');
+      return;
+    }
+    clear && clear.classList.add('visible');
+    // When searching, reveal ALL tabs so matches are visible regardless of active tab
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('active'));
+    let hitCount = 0, tabHits = {};
+    document.querySelectorAll(SEARCH_SELECTOR).forEach(el => {
+      const txt = (el.textContent || '').toLowerCase();
+      const matches = txt.indexOf(q) !== -1;
+      el.classList.toggle('search-hidden', !matches);
+      el.classList.toggle('search-match', matches);
+      if (matches) {
+        hitCount++;
+        const tab = el.closest('.tab-content');
+        if (tab) tabHits[tab.id] = (tabHits[tab.id] || 0) + 1;
+      }
+    });
+    if (meta) {
+      if (hitCount === 0) {
+        meta.textContent = 'No matches for "' + q + '". Try a shorter or different term (e.g., "food", "shelter", "WIC", "diaper").';
+      } else {
+        const tabSummary = Object.keys(tabHits).map(id => {
+          const label = (document.querySelector('[onclick*="\'' + id.replace('tab-', '') + '\'"]') || {}).textContent || id;
+          return label.trim() + ' (' + tabHits[id] + ')';
+        }).join(' · ');
+        meta.textContent = hitCount + ' match' + (hitCount === 1 ? '' : 'es') + ' across: ' + tabSummary;
+        // Scroll to first match
+        const firstMatch = document.querySelector('.search-match');
+        if (firstMatch && !isInViewport(firstMatch)) {
+          firstMatch.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      }
+    }
+  }
+  function isInViewport(el) {
+    const r = el.getBoundingClientRect();
+    return r.top >= 0 && r.top < (window.innerHeight || document.documentElement.clientHeight);
+  }
+  const searchInput = document.getElementById('globalSearch');
+  const searchClear = document.getElementById('searchClear');
+  let searchTimer;
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => runSearch(this.value), 120);
+    });
+  }
+  if (searchClear) {
+    searchClear.addEventListener('click', function() {
+      searchInput.value = '';
+      runSearch('');
+      searchInput.focus();
+      // Restore the previously active tab
+      const id = (function(){ try { return sessionStorage.getItem('activeTab') || 'overview'; } catch(e){ return 'overview'; } })();
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+    });
+  }
+
+  // ── DARK MODE ──────────────────────────────────────
+  function toggleDark() {
+    const on = document.body.classList.toggle('dark');
+    document.getElementById('darkToggle').setAttribute('aria-pressed', on);
+    document.getElementById('darkToggle').textContent = on ? '☀️' : '🌙';
+    try { localStorage.setItem('smrg_dark', on ? '1' : '0'); } catch(e) {}
+  }
+  (function initDark() {
+    let saved;
+    try { saved = localStorage.getItem('smrg_dark'); } catch(e){}
+    const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === '1' || (saved === null && prefers)) {
+      document.body.classList.add('dark');
+      const btn = document.getElementById('darkToggle');
+      if (btn) { btn.setAttribute('aria-pressed', 'true'); btn.textContent = '☀️'; }
+    }
+  })();
+
+  // ── FONT SIZE CYCLE ────────────────────────────────
+  const FONT_SIZES = ['', 'text-lg', 'text-xl'];
+  const FONT_LABELS = ['A+', 'A++', 'A'];
+  function cycleFontSize() {
+    let idx = 0;
+    try { idx = parseInt(localStorage.getItem('smrg_font') || '0', 10); } catch(e){}
+    idx = (idx + 1) % FONT_SIZES.length;
+    document.body.classList.remove('text-lg', 'text-xl');
+    if (FONT_SIZES[idx]) document.body.classList.add(FONT_SIZES[idx]);
+    const btn = document.getElementById('fontToggle');
+    if (btn) btn.textContent = FONT_LABELS[idx];
+    try { localStorage.setItem('smrg_font', String(idx)); } catch(e){}
+    toast('Text size: ' + (['Normal', 'Large', 'Extra large'][idx]));
+  }
+  (function initFont() {
+    let idx = 0;
+    try { idx = parseInt(localStorage.getItem('smrg_font') || '0', 10); } catch(e){}
+    if (FONT_SIZES[idx]) document.body.classList.add(FONT_SIZES[idx]);
+    const btn = document.getElementById('fontToggle');
+    if (btn && idx > 0) btn.textContent = FONT_LABELS[idx];
+  })();
+
+  // ── PRINT (reveals all tabs first) ─────────────────
+  function printGuide() {
+    // Make all tabs visible for printing
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('active'));
+    setTimeout(() => {
+      window.print();
+      // Restore active tab after print dialog closes
+      setTimeout(() => {
+        const id = (function(){ try { return sessionStorage.getItem('activeTab') || 'overview'; } catch(e){ return 'overview'; } })();
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + id).classList.add('active');
+      }, 200);
+    }, 80);
+  }
+
+  // ── TOAST ──────────────────────────────────────────
+  let toastTimer;
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // ── LAST-OPENED TIMESTAMP ──────────────────────────
+  (function lastOpened() {
+    const el = document.getElementById('lastOpened');
+    if (!el) return;
+    const now = new Date();
+    el.textContent = now.toLocaleString('en-US', {
+      weekday: 'short', month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit'
+    });
+  })();
+
+  // ── KEYBOARD SHORTCUTS ─────────────────────────────
+  document.addEventListener('keydown', function(e) {
+    // Esc closes the help modal regardless of focus
+    if (e.key === 'Escape') {
+      const m = document.getElementById('helpModal');
+      if (m && !m.hidden) { toggleHelp(); return; }
+    }
+    // Avoid hijacking shortcuts when typing in inputs
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      if (e.key === 'Escape' && e.target.id === 'globalSearch') {
+        e.target.value = ''; runSearch('');
+      }
+      return;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+      e.preventDefault();
+      const s = document.getElementById('globalSearch');
+      if (s) s.focus();
+    } else if (e.key === '/') {
+      e.preventDefault();
+      const s = document.getElementById('globalSearch');
+      if (s) s.focus();
+    } else if (e.key === '?' || (e.shiftKey && e.key === '?')) {
+      e.preventDefault();
+      toggleHelp();
+    } else if (e.key === 'd' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      toggleDark();
+    } else if (e.key === 'p' && (e.ctrlKey || e.metaKey)) {
+      // Let the browser's native print also reveal all tabs
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.add('active'));
+    }
+  });
+
+  // Click-outside-to-close the help modal
+  document.addEventListener('click', function(e) {
+    const m = document.getElementById('helpModal');
+    if (!m || m.hidden) return;
+    if (e.target === m) toggleHelp();
+  });
+
+  // ── VCARD DOWNLOAD ─────────────────────────────────
+  const VCARD_CONTACTS = {
+    universal: [
+      { name: '211 Help Line', tel: '211', org: 'United Way / Local Services' },
+      { name: 'National DV Hotline', tel: '+18007997233', org: 'Domestic Violence' },
+      { name: 'Maternal Mental Health Hotline', tel: '+18338526262', org: 'Postpartum' },
+      { name: 'PSI Postpartum Helpline', tel: '+18009444773', org: 'Postpartum Support Intl' },
+      { name: 'CDSS CalFresh (CA Statewide)', tel: '+18778473663', org: 'California' },
+      { name: 'Ohio Benefits (OH Statewide)', tel: '+18446406446', org: 'Ohio' },
+    ],
+    ca: [
+      { name: 'Butte County DESS (CalWORKs/CalFresh)', tel: '+18774108803', org: 'Butte County, CA' },
+      { name: 'CA 211 Help Line', tel: '+18003459491', org: 'California 24/7' },
+      { name: 'Chico Shelter Interest Line', tel: '+15308975890', org: 'City of Chico' },
+      { name: 'Chico WIC', tel: '+15305524025', org: 'Butte County WIC' },
+      { name: 'Catalyst DV Services (Chico)', tel: '+18008958476', org: 'Domestic Violence 24/7' },
+      { name: 'North State Food Bank', tel: '+15307122600', org: 'Oroville, CA' },
+      { name: 'Chico Rescue Mission', tel: '+15303431935', org: 'Chico, CA' },
+      { name: 'Housing Authority of Butte County', tel: '+15308954474', org: 'Butte County, CA' },
+      { name: 'NVCSS (Counseling, Chico)', tel: '+15302410552', org: 'Butte County, CA' },
+      { name: 'LSNC Chico (Legal Aid)', tel: '+15303459491', org: 'Legal Services NorCal' },
+      { name: 'Ampla Health (Chico Pediatric)', tel: '+15303424395', org: 'FQHC Chico' },
+      { name: 'Butte Co Car Seat Program', tel: '+18003392941', org: 'Butte County PH' },
+      { name: 'CA LifeLine Phone', tel: '+18662720349', org: 'California' },
+      { name: 'Women\'s Resource Clinic (Chico baby supplies)', tel: '+15308976101', org: 'Chico, CA' },
+      { name: 'Butte Co Children\'s Services (CPS / Family Support)', tel: '+15308793731', org: 'Butte County, CA' },
+      { name: 'Butte Co Child Support Services (DCSS)', tel: '+15308912080', org: 'Butte County, CA' },
+      { name: 'SHARP — Butte Court Self-Help', tel: '+15305327015', org: 'Butte Superior Court' },
+      { name: 'CLIC Chico State (Family Law)', tel: '+15308984354', org: 'Chico State CLIC' },
+    ],
+    oh: [
+      { name: 'Stark County JFS (OWF/SNAP/Medicaid)', tel: '+13304524661', org: 'Stark County, OH' },
+      { name: 'Stark Homeless Hotline', tel: '+13304524363', org: 'Stark County 24/7' },
+      { name: 'Alliance WIC', tel: '+13308213929', org: 'Alliance City Health' },
+      { name: 'Alliance Area DV Shelter', tel: '+13308237223', org: 'Domestic Violence 24/7' },
+      { name: 'Salvation Army Alliance (diapers, utility)', tel: '+13308235188', org: 'Alliance, OH' },
+      { name: 'Alliance Pregnancy Center (baby supplies)', tel: '+13308217283', org: 'Alliance, OH' },
+      { name: 'Alliance for Children & Families', tel: '+13308296332', org: 'Alliance, OH' },
+      { name: 'YWCA Alliance', tel: '+13308231840', org: 'Alliance, OH' },
+      { name: 'SMHA Stark Metro Housing', tel: '+13304548051', org: 'Canton, OH' },
+      { name: 'Alliance Family Health Center', tel: '+13305967581', org: 'Alliance, OH' },
+      { name: 'CommQuest (Counseling)', tel: '+13308218407', org: 'Alliance, OH' },
+      { name: 'Community Legal Aid Canton', tel: '+18009989454', org: 'Stark County Legal' },
+      { name: 'SARTA (Stark transit)', tel: '+13304541080', org: 'Stark County, OH' },
+      { name: 'Cribs for Kids — Stark Health', tel: '+13304939928', org: 'Stark County, OH' },
+      { name: 'Alliance Community Pantry', tel: '+13306808130', org: 'Alliance, OH' },
+      { name: 'Stark Co Children Services (24-hr)', tel: '+18002335437', org: 'Stark County, OH' },
+      { name: 'Stark CSEA (Child Support)', tel: '+13304303800', org: 'Stark County, OH' },
+      { name: 'Stark Co Family Court (Domestic Rel.)', tel: '+13304517415', org: 'Canton, OH' },
+      { name: 'Pro Se Visitation Clinic', tel: '+13305354191', org: 'Akron, OH' },
+    ]
+  };
+  function buildVCard(contact) {
+    return [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:;' + contact.name.replace(/[,;]/g, ' ') + ';;;',
+      'FN:' + contact.name.replace(/[,;]/g, ' '),
+      'ORG:' + (contact.org || 'Resource Guide').replace(/[,;]/g, ' '),
+      'TEL;TYPE=WORK,VOICE:' + contact.tel,
+      'NOTE:Saved from Single Mother Resource Guide',
+      'END:VCARD'
+    ].join('\r\n');
+  }
+  function downloadVCards(scope) {
+    let contacts = VCARD_CONTACTS.universal.slice();
+    let label = 'all';
+    if (scope === 'ca') { contacts = contacts.concat(VCARD_CONTACTS.ca); label = 'chico-ca'; }
+    else if (scope === 'oh') { contacts = contacts.concat(VCARD_CONTACTS.oh); label = 'alliance-oh'; }
+    else { contacts = contacts.concat(VCARD_CONTACTS.ca, VCARD_CONTACTS.oh); }
+    const vcf = contacts.map(buildVCard).join('\r\n\r\n');
+    const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'resource-guide-contacts-' + label + '.vcf';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+    toast('Downloaded ' + contacts.length + ' contacts — open the .vcf file on your phone to import');
+  }
+
+  // ── TAB ARROW-KEY NAVIGATION (ARIA tablist) ────────
+  (function tabKeys() {
+    const tabs = Array.from(document.querySelectorAll('.tab-btn[role="tab"]'));
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('keydown', (e) => {
+        let next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) {
+          e.preventDefault();
+          next.click();
+          next.focus();
+        }
+      });
+    });
+  })();
+
+  // ── INIT ───────────────────────────────────────────
+  injectCopyButtons();
+  injectMapLinks();
+  restoreChecklist();
+
+  // Restore last active tab
+  (function restoreTab() {
+    let id;
+    try { id = sessionStorage.getItem('activeTab'); } catch(e){}
+    if (!id || !document.getElementById('tab-' + id)) return;
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    const btn = document.querySelector('.tab-btn[onclick*="\'' + id + '\'"]');
+    if (btn) btn.classList.add('active');
+  })();
+</script>
+
+</body>
+</html>

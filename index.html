@@ -609,6 +609,167 @@
     a[href^="tel:"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
     .footer { background: white !important; color: #555 !important; border-top: 1px solid #ccc; }
   }
+
+  /* ════════════════════════════════════════
+     MOBILE-FRIENDLY IMPROVEMENTS
+     ════════════════════════════════════════ */
+
+  /* Better base text rendering & tap behavior */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    -webkit-tap-highlight-color: rgba(42, 95, 101, 0.15);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+  /* Prevent iOS zoom on focusing form fields (must be ≥16px) */
+  .search-input, .app-tracker input, .app-tracker select { font-size: 16px; }
+  /* Smooth iOS-style scroll on horizontal scrollers */
+  .table-wrap, .tab-nav-inner { -webkit-overflow-scrolling: touch; }
+
+  /* Wait-time tables — horizontal scroll wrapper */
+  .table-wrap { width: 100%; overflow-x: auto; margin-bottom: 32px; }
+  .table-wrap .wait-table { margin-bottom: 0; }
+  @media (max-width: 720px) {
+    .wait-table { min-width: 540px; font-size: .82rem; }
+    .wait-table th, .wait-table td { padding: 10px 12px; }
+    .table-wrap {
+      margin-left: -24px; margin-right: -24px;
+      padding: 0 24px 4px;
+      mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    }
+  }
+
+  /* Bigger tap targets — copy and map buttons (all screens) */
+  .copy-btn {
+    min-height: 30px; min-width: 32px;
+    padding: 4px 10px; font-size: .76rem;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .map-link {
+    min-height: 28px; padding: 4px 10px;
+    font-size: .76rem; display: inline-flex; align-items: center;
+  }
+  /* Contact rows can wrap nicely with the bigger badges */
+  .contact-list li { flex-wrap: wrap; }
+  .contact-list a[href^="tel:"] { font-weight: 600; }
+
+  /* Tap feedback for non-button rows (mobile) */
+  .checklist-item:active { background: rgba(42,95,101,.10); }
+
+  /* Sm-mobile (≤480px) — phones in portrait */
+  @media (max-width: 480px) {
+    .header { padding: 26px 16px 22px; }
+    .header h1 { font-size: 1.55rem; line-height: 1.22; margin-bottom: 10px; }
+    .header-eyebrow { font-size: .68rem; margin-bottom: 8px; }
+    .header p { font-size: .88rem; margin-bottom: 14px; }
+    .badge { padding: 4px 12px; font-size: .74rem; }
+
+    .alert-bar { font-size: .78rem; line-height: 1.5; padding: 10px 14px; }
+    .tab-btn { padding: 13px 10px; font-size: .74rem; }
+    .section-title { font-size: 1.35rem; }
+    .section-sub { font-size: .86rem; }
+
+    /* Cards: tighter padding, more breathing room between */
+    .card { padding: 18px 18px; }
+    .card-grid { gap: 14px; margin-bottom: 28px; }
+    .card h3 { font-size: 1.02rem; }
+    .card p { font-size: .85rem; }
+    .card-label { font-size: .7rem; }
+
+    /* Contact list — bigger phone tap targets */
+    .contact-list li { font-size: .85rem; padding: 3px 0; }
+    .contact-list a[href^="tel:"] {
+      display: inline-block; padding: 4px 2px;
+      text-decoration: underline; text-underline-offset: 3px;
+    }
+    .contact-list .ico { font-size: 1.05rem; }
+
+    /* Tip / warn / emergency boxes */
+    .tip-box, .warn-box { padding: 16px 18px; }
+    .tip-box h4, .warn-box h4 { font-size: .95rem; }
+    .tip-box li, .warn-box p { font-size: .85rem; }
+    .emergency-panel { padding: 18px 18px; }
+    .emergency-panel h3 { font-size: 1.05rem; }
+    .emergency-panel .em-grid { gap: 8px; }
+    .emergency-panel .em-item { padding: 9px 12px; font-size: .82rem; }
+
+    /* Wallet card */
+    .wallet-card { padding: 18px 16px; }
+    .wallet-row a { font-size: .88rem; }
+
+    /* Estimator */
+    .est-col { padding: 14px 16px; }
+    .est-col h3 { font-size: .98rem; }
+    .est-table { font-size: .82rem; }
+    .est-note { font-size: .78rem; padding: 11px 14px; }
+
+    /* Checklist — bigger tap targets */
+    .checklist-item { padding: 14px 12px; gap: 12px; }
+    .checklist-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; }
+    .checklist-item label { font-size: .92rem; line-height: 1.55; }
+    .checklist-item .item-note { font-size: .78rem; margin-top: 5px; line-height: 1.5; display: block; }
+
+    /* Step number circles */
+    .step-number { width: 36px; height: 36px; font-size: 1rem; }
+    .step-meta h3 { font-size: .95rem; }
+
+    /* Progress bar stacks */
+    .progress-summary { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px 16px; }
+    .progress-bar-wrap { width: 100%; min-width: 0; }
+    .progress-text { min-width: 0; }
+    .progress-reset { align-self: flex-end; }
+
+    /* Action bar — semi-transparent pill so it doesn't fully block content */
+    .action-bar {
+      bottom: 10px; right: 8px; gap: 6px;
+      background: rgba(255,255,255,0.88);
+      padding: 5px; border-radius: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .action-btn {
+      width: 38px; height: 38px; font-size: .92rem;
+      box-shadow: none; border-color: transparent;
+    }
+    body.dark .action-bar { background: rgba(35,39,41,0.88); }
+
+    /* Phone-call script italic boxes — readable & no overflow */
+    .card p[style*="italic"] {
+      font-style: normal !important;
+      font-weight: 500;
+      word-wrap: break-word; overflow-wrap: break-word;
+      hyphens: auto; -webkit-hyphens: auto;
+      font-size: .9rem;
+    }
+
+    /* vCard buttons — full width stack */
+    .vcard-btn { width: 100%; padding: 13px 18px; font-size: .9rem; }
+
+    /* Search bar */
+    .search-wrap { padding: 12px 16px 4px; }
+    .search-input { padding: 11px 14px 11px 38px; }
+    .search-icon { left: 30px; }
+
+    /* Help modal */
+    .help-card { padding: 22px 20px; max-height: 92vh; }
+    .help-card h3 { font-size: 1.15rem; }
+    .help-card dl { grid-template-columns: 1fr; gap: 6px 12px; }
+    .help-card dt { text-align: left; }
+  }
+
+  /* xs-mobile (≤360px) — older / smaller phones */
+  @media (max-width: 360px) {
+    .header h1 { font-size: 1.4rem; }
+    .card { padding: 16px 14px; }
+    .checklist-item label { font-size: .88rem; }
+    .badge { font-size: .7rem; padding: 3px 10px; }
+  }
 </style>
 </head>
 <body>
@@ -2208,6 +2369,7 @@
     <p class="section-sub">Based on real-world program data as of 2025–2026. These are honest estimates — not best-case scenarios.</p>
 
     <h3 style="font-size:1rem;color:var(--ca-accent);margin-bottom:12px;font-weight:600;">📍 Chico, CA (Butte County)</h3>
+    <div class="table-wrap">
     <table class="wait-table">
       <thead>
         <tr>
@@ -2262,8 +2424,10 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <h3 style="font-size:1rem;color:var(--oh-accent);margin-bottom:12px;font-weight:600;">📍 Alliance, OH (Stark County)</h3>
+    <div class="table-wrap">
     <table class="wait-table">
       <thead>
         <tr>
@@ -2324,6 +2488,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <div class="tip-box">
       <h4>⏱️ Counselor's Honest Assessment on Wait Times</h4>

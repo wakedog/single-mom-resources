@@ -400,11 +400,21 @@
   body.dark {
     --cream: #1a1d1f;
     --warm-white: #232729;
-    --text: #e8e6e3;
-    --text-mid: #b8b5b1;
-    --text-light: #888581;
-    --border: #2f3437;
-    --deep-teal: #0f2528;
+    --text: #ecebe8;
+    --text-mid: #cfccc6;          /* was #b8b5b1 — brighter for readability */
+    --text-light: #a8a59c;        /* was #888581 — brighter */
+    --border: #353a3d;
+    --deep-teal: #0f2528;         /* stays dark — only used as a bg */
+    /* Brand colors lightened so they're legible on dark backgrounds */
+    --teal: #6dbac1;              /* was #2a5f65 */
+    --teal-light: #8fd4dc;        /* was #3d8a91 */
+    --gold: #e0a262;              /* was #c8833a */
+    --gold-light: #f0c08c;        /* was #e8a55a */
+    --rose: #e87a6e;              /* was #c2574a */
+    --sage: #88c599;              /* was #4e7c59 */
+    --sage-light: #a8dcb8;        /* was #6aaa78 */
+    --ca-accent: #6dbcd8;         /* was #1a6b8a */
+    --oh-accent: #e09494;         /* was #7a2d2d */
     --shadow: 0 4px 24px rgba(0,0,0,0.4);
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
   }
@@ -414,14 +424,61 @@
   body.dark .action-btn { background: #232729; }
   body.dark .tab-nav { background: #232729; }
   body.dark .wait-table tr:nth-child(even) td { background: rgba(255,255,255,.03); }
-  body.dark .loc-tag.ca { background: #1a3540; color: #8ec8e0; }
-  body.dark .loc-tag.oh { background: #3a1d1d; color: #e0a8a8; }
+  body.dark .wait-table th { background: #1a2c30; color: var(--text); }
+  body.dark .loc-tag.ca { background: #1a3540; color: #9bd0e6; border-color: #2a5570; }
+  body.dark .loc-tag.oh { background: #3a1d1d; color: #f0b0b0; border-color: #6a3030; }
   body.dark .tip-box { background: linear-gradient(135deg, #1a2528 0%, #232729 100%); border-color: #2f4a4f; }
   body.dark .warn-box { background: #2a221a; border-color: #4a3520; }
-  body.dark .timeframe.urgent { background: #3a1a1a; }
-  body.dark .timeframe.soon { background: #3a2c1a; }
-  body.dark .timeframe.medium { background: #1a2a2c; }
-  body.dark .timeframe.long { background: #1a2c1f; }
+  body.dark .timeframe.urgent { background: #3a1a1a; color: #f0a098; }
+  body.dark .timeframe.soon { background: #3a2c1a; color: #f0c08c; }
+  body.dark .timeframe.medium { background: #1a2a2c; color: #8fd4dc; }
+  body.dark .timeframe.long { background: #1a2c1f; color: #a8dcb8; }
+
+  /* Elements that use --deep-teal as TEXT color need light text in dark mode */
+  body.dark .section-title { color: var(--text); }
+  body.dark .card h3 { color: var(--text); }
+  body.dark .step-meta h3 { color: var(--text); }
+  body.dark .wallet-title { color: var(--text); }
+  body.dark .est-col h3 { color: var(--text); }
+  body.dark .tip-box h4 { color: var(--teal-light); }
+  body.dark .warn-box h4 { color: var(--gold-light); }
+  body.dark .footer { color: rgba(255,255,255,.78); }
+  body.dark .footer strong { color: white; }
+  body.dark .footer em { color: rgba(255,255,255,.68); }
+  body.dark .header p { color: rgba(255,255,255,.85); }
+
+  /* Wallet card striped rows — bump contrast in dark mode */
+  body.dark .wallet-row[style*="background:#fdf0f0"] { background: #2a1f1f !important; }
+  body.dark .wallet-row[style*="background:#e8f4f8"] { background: #1a2a30 !important; }
+  body.dark .wallet-row strong { color: var(--text-mid); }
+
+  /* Phone-call script quote boxes — need a slightly lighter bg than card */
+  body.dark .card p[style*="background:var(--cream)"] {
+    background: #2c3134 !important;
+    color: var(--text) !important;
+  }
+
+  /* Checked items — striked but still readable */
+  body.dark .checklist-item.checked label { color: var(--text-light); }
+
+  /* Search highlight more visible in dark mode */
+  body.dark .search-hit { background: rgba(240,192,140,0.35); color: var(--text); }
+  body.dark .card.search-match { box-shadow: 0 0 0 2px var(--gold-light), var(--shadow); }
+
+  /* Status pill / contact-list links — pop in dark mode */
+  body.dark .contact-list a { color: var(--teal-light); }
+  body.dark .wallet-row a { color: var(--teal-light); }
+
+  /* Tab nav active state — clearer in dark mode */
+  body.dark .tab-btn.active { color: var(--teal-light); border-bottom-color: var(--teal-light); }
+  body.dark .tab-btn:hover { color: var(--teal-light); }
+
+  /* Action bar buttons — readable in dark mode */
+  body.dark .action-btn { color: var(--text); border-color: var(--border); }
+
+  /* Vcard button alt variant — readable in dark mode */
+  body.dark .vcard-btn.alt { color: var(--teal-light); border-color: var(--teal-light); }
+  body.dark .vcard-btn.alt:hover { background: rgba(143,212,220,0.1); }
 
   /* ── FONT SIZE CONTROL ── */
   body.text-lg { font-size: 1.08rem; }
@@ -917,19 +974,6 @@
         <h3>Rental Assistance + Shelter</h3>
         <p>Both areas have emergency family shelters and rental assistance. CA has Housing Authority of Butte County with Section 8 vouchers. OH has Stark Metropolitan Housing Authority. <strong>Warning:</strong> Section 8 waitlists are long (1–3 years) — apply immediately even while pursuing other options.</p>
       </div>
-    </div>
-
-    <div class="tip-box" style="border-color:#b3d4d8;background:linear-gradient(135deg,#fdf6ee 0%, #f0f8fa 100%);">
-      <h4 style="color:var(--teal);">🌐 ¿Habla Español? — Spanish-Language Help Lines</h4>
-      <ul>
-        <li><strong>211</strong> — both states offer Spanish service automatically; press 2 or ask for "Español"</li>
-        <li><strong>Medi-Cal / Covered CA (Spanish):</strong> <a href="tel:18003001506">(800) 300-1506</a></li>
-        <li><strong>CalFresh statewide (Spanish):</strong> <a href="tel:18778473663">(877) 847-3663</a> press 2</li>
-        <li><strong>Ohio Benefits (Spanish):</strong> <a href="tel:18446406446">1-844-640-6446</a> press 2</li>
-        <li><strong>National Domestic Violence Hotline (Spanish):</strong> <a href="tel:18007997233">1-800-799-7233</a> — bilingual advocates 24/7</li>
-        <li><strong>Maternal Mental Health (Spanish + 60 lenguajes):</strong> <a href="tel:18338526262">1-833-852-6262</a></li>
-        <li><strong>PSI Postpartum (Español):</strong> <a href="tel:9719201160">(971) 420-0294</a> — línea en español</li>
-      </ul>
     </div>
 
     <div class="tip-box">
